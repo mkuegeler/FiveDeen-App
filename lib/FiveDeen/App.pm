@@ -3,6 +3,10 @@ use Dancer ':syntax';
 
 use File::Slurp qw(read_file write_file);
 
+use File::Spec::Functions qw(rel2abs);
+use File::Basename;
+
+
 our $VERSION = '0.1';
 
 # ---------------------------------------------------------------------------
@@ -11,11 +15,11 @@ our $VERSION = '0.1';
 hook before_template => sub {
        my $tokens = shift;
        $tokens->{'symbols'} = config->{symbols};
-    
+       # my ($cgi_path,$html_path,$app_path) = (dirname(rel2abs($0)), $ENV{'DOCUMENT_ROOT'}, dirname($ENV{'DOCUMENT_ROOT'}));        
+
 };
 
 # ---------------------------------------------------------------------------
-
 
 get '/' => sub {
 	template 'index', {

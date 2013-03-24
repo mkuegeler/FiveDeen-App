@@ -32,11 +32,8 @@ symbols: /javascripts/symbols.js
 
 # json file containing the symbol sequence
 maps:
-    json: /home/michael/workspace/FiveDeen-App/maps.json
+    json: /home/perldev/workspace/FiveDeen-App/maps.json
 
 # default sequence file
 sequence:
-    json: /home/michael/workspace/FiveDeen-App/sequence.json
-
-    
-    
+    json: /home/perldev/workspace/FiveDeen-App/sequence.json
