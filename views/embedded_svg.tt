@@ -1,0 +1,37 @@
+<div class="container">
+<% header %>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h3>Symbol Library</h3>
+
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)">
+
+	<script type="text/ecmascript" xlink:href="/symbols"></script>
+	<script type="text/ecmascript" xlink:href="/include"></script>
+
+	<defs id="templates"/>
+
+	<script>	    	
+		<% FOR e IN data %>
+		    new Symbols().use("<% e.name %>","translate(<% e.translate %>)"); 		    
+		<% END %>	
+	</script>
+              
+	</svg> 
+          
+  </div>
+  <hr>
+
+  <div class="footer">
+    <p>&copy; 5deen.com 2013</p>
+    <p>Michael Kuegeler</p>
+  </div>
+
+</div> <!-- /container -->
+
+
+<!-- debug stuff -->
+
+<script>
+   console.log("<% sequence %>");    
+</script>

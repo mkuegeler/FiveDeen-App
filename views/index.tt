@@ -1,0 +1,24 @@
+<div class="container">
+<% header %>
+  <!-- Jumbotron -->
+  <div class="jumbotron">
+    <h1>Reading Machine</h1>
+    <p class="lead">Visualize your Text. Get your ideas coded.</p>
+    <a class="btn btn-large btn-success" href="/svg">Try Out!</a>
+  </div>
+
+       <!-- Example row of columns -->
+  <div class="jumbotron">
+
+	            
+
+  </div>
+
+  <hr>
+
+  <div class="footer">
+    <p>&copy; 5deen.com 2013</p>
+    <p>Michael Kuegeler</p>
+  </div>
+
+</div> <!-- /container -->

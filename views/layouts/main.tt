@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-type" content="text/html; charset=<% settings.charset %>" />
+<title>FiveDeen::Reading Machine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="">
+<meta name="author" content="Michael Kuegeler">
+
+<!-- Le styles -->
+<link href="<% request.uri_base %>/assets/css/bootstrap.css" rel="stylesheet">
+<link href="<% request.uri_base %>/assets/css/bootstrap-responsive.css" rel="stylesheet">
+<link href="<% request.uri_base %>/css/fivedeen.css" rel="stylesheet">
+
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">/* <![CDATA[ */
+    !window.jQuery && document.write('<script type="text/javascript" src="<% request.uri_base %>/assets/js/jquery.js"><\/script>')
+/* ]]> */</script>
+
+<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+<!--[if lt IE 9]>
+  <script src="<% request.uri_base %>/assets/js/html5shiv-printshiv.js"></script>
+<![endif]-->
+
+<!-- Fav and touch icons -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<% request.uri_base %>/assets/ico/apple-touch-icon-144-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="<% request.uri_base %>/assets/ico/apple-touch-icon-114-precomposed.png">
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="<% request.uri_base %>/assets/ico/apple-touch-icon-72-precomposed.png">
+<link rel="apple-touch-icon-precomposed" href="<% request.uri_base %>/assets/ico/apple-touch-icon-57-precomposed.png">
+<link rel="shortcut icon" href="<% request.uri_base %>/assets/ico/favicon.png">
+
+</head>
+<body>
+<% content %>	
+
+<!-- Le javascript ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="<% request.uri_base %>/assets/js/bootstrap-transition.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-alert.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-modal.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-dropdown.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-scrollspy.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-tab.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-tooltip.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-popover.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-button.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-collapse.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-carousel.js"></script>
+<script src="<% request.uri_base %>/assets/js/bootstrap-typeahead.js"></script>
+
+
+</body>
+</html>
