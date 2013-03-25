@@ -15,6 +15,9 @@
 		<% FOR e IN data %>
 		    new Symbols().use("<% e.name %>","translate(<% e.translate %>)"); 		    
 		<% END %>	
+
+    
+
 	</script>
               
 	</svg> 
@@ -33,5 +36,7 @@
 <!-- debug stuff -->
 
 <script>
-   console.log("<% sequence %>");    
+<% FOR f IN grid %>
+        console.log("<% f %>");         
+    <% END %>   
 </script>

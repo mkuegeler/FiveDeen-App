@@ -38,14 +38,55 @@ get '/svg' => sub {
 	my $json = -e $mapname ? read_file $mapname : '{}';
     my $data = from_json $json;
 
-    my $offset = 50;
+    
+    
 
     my $seqname = config->{sequence}{json}; 
+    my $seqjson = -e $seqname ? read_file $seqname : '{}';
+    my $seqdata = from_json $seqjson;
+
+    my $length = @{$seqdata->{sequence}}; 
+    my $div = 2;
+    my $offset = 50;
+
+    my @grid = (6,2,50);
+
+    #my @grid = setGridRows($length,$div,$offset);
+
+    # <% FOR f IN grid %>
+    #    // new Symbols().use("Symbol_1","translate(<% f.x %>,<% f.y %>)");         
+    # <% END %>
+
+
+    # {"grid":
+    #   [
+    #    {"x":0,"y":0},
+    #    {"x":0,"y":50},	
+    #    {"x":0,"y":100},	
+    #    {"x":0,"y":150},		
+    #   ]
+    # }
+
+    # my $node_hash = {
+    # a => [ 'text1', 'text2' ],
+    # b => [ 'what',  'is', 'this' ],
+    # };
+
+    my $node_hash = {
+        translate1 => [ '0', '0' ],
+        translate2 => [ '10', '10' ],
+    
+    };
+
+
+    # {"a":["text1","text2"],"b":["what","is","this"]}
+    
+
 	
     template 'embedded_svg', {
                'data' =>  $data->{maps}, 
 
-               'sequence' => getSequence($seqname),
+               'grid' => to_json($node_hash),
 
                'offset' => $offset,              
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
@@ -118,7 +159,7 @@ sub setGridRows {
 	    
     }
 
-	return @grid;
+	return to_json(@grid);
 }
 # ---------------------------------------------------------------------------
 true;
