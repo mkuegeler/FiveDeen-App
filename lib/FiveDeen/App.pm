@@ -14,7 +14,13 @@ our $VERSION = '0.1';
 
 hook before_template => sub {
        my $tokens = shift;
+
        $tokens->{'symbols'} = config->{symbols};
+       $tokens->{'cgi_path'} = dirname(rel2abs($0));
+       $tokens->{'html_path'} = $ENV{'DOCUMENT_ROOT'};
+       # $tokens->{'app_path'} = dirname($ENV{'DOCUMENT_ROOT'});
+
+
        # my ($cgi_path,$html_path,$app_path) = (dirname(rel2abs($0)), $ENV{'DOCUMENT_ROOT'}, dirname($ENV{'DOCUMENT_ROOT'}));        
 
 };
