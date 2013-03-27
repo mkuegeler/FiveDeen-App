@@ -76,7 +76,10 @@ get '/svg' => sub {
         translate1 => [ '0', '0' ],
         translate2 => [ '10', '10' ],
     
-    };
+    }; 
+
+    my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+
 
 
     # {"a":["text1","text2"],"b":["what","is","this"]}
@@ -86,7 +89,7 @@ get '/svg' => sub {
     template 'embedded_svg', {
                'data' =>  $data->{maps}, 
 
-               'grid' => to_json($node_hash),
+               'grid' => to_json($grid_hash),
 
                'offset' => $offset,              
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
@@ -105,6 +108,28 @@ get '/include' => sub {
 get '/symbols' => sub {
 	send_file config->{symbols};
 };
+
+#---------------------------------------------------------------------------
+# test routes
+
+get '/setGridRows' => sub {
+
+       # my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+       my @grid = setGridRows(10, 5, 50);
+       # return "setGridRows";
+       # return $grid_hash;
+
+       return "$grid[2]->{x}, $grid[2]->{y}";
+
+
+};
+
+get '/setPoints' => sub {
+
+  return setPoints();
+
+};
+
 
 #---------------------------------------------------------------------------
 # get the sequence json
@@ -159,7 +184,18 @@ sub setGridRows {
 	    
     }
 
-	return to_json(@grid);
+	return @grid;
+}
+
+#---------------------------------------------------------------------------
+sub setPoints {  
+  # body...
+  # my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+  my $tmp_hash = { grid => []};
+
+  return $tmp_hash;
+
+
 }
 # ---------------------------------------------------------------------------
 true;
