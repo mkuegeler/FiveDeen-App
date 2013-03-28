@@ -82,7 +82,7 @@ get '/svg' => sub {
 
 
     # {"a":["text1","text2"],"b":["what","is","this"]}
-    my $grid_hash = { grid => [{x=>0,y=>0},{x=>0,y=>0} ] };
+    # my $grid_hash = { grid => [{x=>0,y=>0},{x=>0,y=>0} ] };
 
 	
     template 'embedded_svg', {
