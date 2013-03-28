@@ -73,20 +73,19 @@ get '/svg' => sub {
     # };
 
     my $node_hash = {
-        translate1 => [ '0', '0' ],
-        translate2 => [ '10', '10' ],
+        grid => [ '0', '0' ],
+        
     
     };
 
-
     # {"a":["text1","text2"],"b":["what","is","this"]}
-    
+    my $grid_hash = { grid => [{x=>0,y=>0},{x=>0,y=>0} ] };
 
 	
     template 'embedded_svg', {
                'data' =>  $data->{maps}, 
 
-               'grid' => to_json($node_hash),
+               'grid' => to_json($grid_hash),
 
                'offset' => $offset,              
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
@@ -159,7 +158,7 @@ sub setGridRows {
 	    
     }
 
-	return to_json(@grid);
+	return @grid;
 }
 # ---------------------------------------------------------------------------
 true;
