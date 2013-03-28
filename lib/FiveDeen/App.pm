@@ -76,7 +76,10 @@ get '/svg' => sub {
         grid => [ '0', '0' ],
         
     
-    };
+    }; 
+
+    my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+
 
     # {"a":["text1","text2"],"b":["what","is","this"]}
     my $grid_hash = { grid => [{x=>0,y=>0},{x=>0,y=>0} ] };
@@ -104,6 +107,28 @@ get '/include' => sub {
 get '/symbols' => sub {
 	send_file config->{symbols};
 };
+
+#---------------------------------------------------------------------------
+# test routes
+
+get '/setGridRows' => sub {
+
+       # my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+       my @grid = setGridRows(10, 5, 50);
+       # return "setGridRows";
+       # return $grid_hash;
+
+       return "$grid[2]->{x}, $grid[2]->{y}";
+
+
+};
+
+get '/setPoints' => sub {
+
+  return setPoints();
+
+};
+
 
 #---------------------------------------------------------------------------
 # get the sequence json
@@ -159,6 +184,20 @@ sub setGridRows {
     }
 
 	return @grid;
+<<<<<<< HEAD
+=======
+}
+
+#---------------------------------------------------------------------------
+sub setPoints {  
+  # body...
+  # my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
+  my $tmp_hash = { grid => []};
+
+  return $tmp_hash;
+
+
+>>>>>>> a371529344ad602008d93401cee4d965deaccb5b
 }
 # ---------------------------------------------------------------------------
 true;
