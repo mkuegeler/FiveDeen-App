@@ -1,0 +1,5 @@
+# 1. git status
+# 2. git pull (if changes on github repo)
+# 3. git add .
+# 4. git commit -a -m "Improve the README file"
+# 5. git push

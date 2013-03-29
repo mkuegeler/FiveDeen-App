@@ -1,1 +1,4 @@
-Test Template
+<% FOR f IN content %>
+        translate("<% f.x %>,<% f.y %>")         
+<% END %>
+<% values %>

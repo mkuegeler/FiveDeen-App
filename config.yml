@@ -37,3 +37,7 @@ maps:
 # default sequence file
 sequence:
     json: /home/perldev/workspace/FiveDeen-App/sequence.json
+
+    # default grid file
+grid:
+    json: /home/perldev/workspace/FiveDeen-App/grid.json
