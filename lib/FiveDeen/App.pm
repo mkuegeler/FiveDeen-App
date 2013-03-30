@@ -90,7 +90,7 @@ get '/svg' => sub {
     
 	  # maps.json = grid & sequence
 
-    my $maps = setMaps($seqdata,$grid);
+    my $maps = setMaps($seqdata,2,100);
 
     template 'embedded_svg', {
 
@@ -100,7 +100,7 @@ get '/svg' => sub {
 
                'grid' => $grid->{grid},
 
-               'log' => $maps,
+               'log' => $maps->{maps},
 
                'offset' => $offset,              
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
@@ -184,7 +184,23 @@ sub setPoints {
 # get the maps.json by merging sequence.json and grid.json
 sub setMaps {
 
-my ($seqdata, $grid) = @_;  
+# my ($seqdata, $grid) = @_;  
+
+my ($seqdata, $div,$offset) = @_;  
+my $length = @{$seqdata->{sequence}}; 
+
+my $maps = { maps => []};
+my $grid = from_json(setPoints($length,$div,$offset));
+ my @keys =  ( "name", "translate");
+ 
+my $count = 0;
+
+foreach my $item (@{$seqdata->{sequence}}) {
+ 
+        push ($maps->{maps},{$keys[0] =>$item->{name}, $keys[1] =>"$grid->{grid}[$count]->{x},$grid->{grid}[$count]->{y}"} );
+        
+        $count++;
+} 
 
 # {"maps":
 # [
@@ -196,9 +212,9 @@ my ($seqdata, $grid) = @_;
 # ]
 # }
 
-my $length = @{$seqdata->{sequence}}; 
+# my $length = @{$seqdata->{sequence}}; 
 
-return $length;
+return $maps;
 
 
 }

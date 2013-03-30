@@ -4,7 +4,7 @@
   <div class="jumbotron">
     <h3>Symbol Library</h3>
 
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="640" height="480">
 
 	<script type="text/ecmascript" xlink:href="/symbols"></script>
 	<script type="text/ecmascript" xlink:href="/include"></script>
@@ -13,12 +13,12 @@
 
 	<script>	    	
 		<% FOR e IN data %>
-		    new Symbols().use("<% e.name %>","translate(<% e.translate %>)"); 		    
+		    // new Symbols().use("<% e.name %>","translate(<% e.translate %>)"); 		    
 		<% END %>	
 
-    <% FOR s IN sequence %>       
+    <% FOR s IN log %>       
        
-       // new Symbols().use("<% s.name %>","translate(<% g.x %>,<% g.y %>)");         
+        new Symbols().use("<% s.name %>","translate(<% s.translate %>)");         
         
     <% END %>
 	</script>
@@ -39,6 +39,14 @@
 <!-- debug stuff -->
 
 <script>
-console.log("<% log %>");         
+
+<% FOR s IN log %>       
+       
+       console.log("<% s.translate %>");    
+        
+    <% END %>
+
+
+     
 </script>
 
