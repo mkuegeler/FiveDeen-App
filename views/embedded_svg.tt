@@ -16,9 +16,9 @@
 		    // new Symbols().use("<% e.name %>","translate(<% e.translate %>)"); 		    
 		<% END %>	
 
-    <% FOR s IN log %>       
+    <% FOR m IN maps %>       
        
-        new Symbols().use("<% s.name %>","translate(<% s.translate %>)");         
+       new Symbols().use("<% m.name %>","translate(<% m.translate %>)");         
         
     <% END %>
 	</script>
@@ -39,14 +39,6 @@
 <!-- debug stuff -->
 
 <script>
-
-<% FOR s IN log %>       
-       
-       console.log("<% s.translate %>");    
-        
-    <% END %>
-
-
-     
+console.log("debug");    
 </script>
 

@@ -14,15 +14,7 @@ our $VERSION = '0.1';
 
 hook before_template => sub {
        my $tokens = shift;
-
        $tokens->{'symbols'} = config->{symbols};
-       $tokens->{'cgi_path'} = dirname(rel2abs($0));
-       $tokens->{'html_path'} = $ENV{'DOCUMENT_ROOT'};
-       # $tokens->{'app_path'} = dirname($ENV{'DOCUMENT_ROOT'});
-
-
-       # my ($cgi_path,$html_path,$app_path) = (dirname(rel2abs($0)), $ENV{'DOCUMENT_ROOT'}, dirname($ENV{'DOCUMENT_ROOT'}));        
-
 };
 
 # ---------------------------------------------------------------------------
@@ -35,72 +27,16 @@ get '/' => sub {
 
 get '/svg' => sub {
 
-	  my $mapname = config->{maps}{json}; 
-	  my $json = -e $mapname ? read_file $mapname : '{}';
-    my $data = from_json $json;
-
-    my $gridname = config->{grid}{json}; 
-    my $gridjson = -e $gridname ? read_file $gridname : '{}';
-    my $default_grid = from_json $gridjson;
+    my $seqdata = read_json_file(config->{sequence}{json});
     
+    my $div = config->{maps}{div};
+    my $offset = config->{maps}{offset};
 
-    my $seqname = config->{sequence}{json}; 
-    my $seqjson = -e $seqname ? read_file $seqname : '{}';
-    my $seqdata = from_json $seqjson;
-
-    my $length = @{$seqdata->{sequence}}; 
-    my $div = 2;
-    my $offset = 50;
-
-    # my @grid = (6,2,50);
-
-    #my @grid = setGridRows($length,$div,$offset);
-
-    # <% FOR f IN grid %>
-    #    // new Symbols().use("Symbol_1","translate(<% f.x %>,<% f.y %>)");         
-    # <% END %>
-
-
-    # {"grid":
-    #   [
-    #    {"x":0,"y":0},
-    #    {"x":0,"y":50},	
-    #    {"x":0,"y":100},	
-    #    {"x":0,"y":150},		
-    #   ]
-    # }
-
-    # my $node_hash = {
-    # a => [ 'text1', 'text2' ],
-    # b => [ 'what',  'is', 'this' ],
-    # };
-
-    my $node_hash = {
-        grid => [ '0', '0' ],
-        
-    
-    }; 
-
-    # my $grid_hash = { grid => [{x=>0,y=>50},{x=>0,y=>100},{x=>0,y=>150},{x=>0,y=>200}]};
-    # my $grid_hash = setPoints(4,2,50);
-    my $grid = from_json(setPoints($length,2,50));
-
-    # {"a":["text1","text2"],"b":["what","is","this"]}
-    # my $grid_hash = { grid => [{x=>0,y=>0},{x=>0,y=>0} ] };
-    
-	  # maps.json = grid & sequence
-
-    my $maps = setMaps($seqdata,2,100);
+    my $maps = from_json(set_maps($seqdata,$div,$offset));
 
     template 'embedded_svg', {
 
-               'data' =>  $data->{maps}, 
-
-               'sequence' => $seqdata->{sequence},   
-
-               'grid' => $grid->{grid},
-
-               'log' => $maps->{maps},
+               'maps' => $maps->{maps},
 
                'offset' => $offset,              
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
@@ -120,34 +56,11 @@ get '/symbols' => sub {
 	send_file config->{symbols};
 };
 
-#---------------------------------------------------------------------------
-
-#---------------------------------------------------------------------------
-# get the sequence json
-
-sub getSequence {
-	
-	my $file = shift;
-	
-	my $json = -e $file ? read_file $file : '{}';
-    my $data = from_json $json;
-
-    my $length = @{$data->{sequence}}; 
-	
-	# return $data->{sequence}[0]->{name};
-	# return length(@{$data->{sequence}});	
-	# return length(@decoded_json);
-	
-	return $length;
-	
-}
 
 #---------------------------------------------------------------------------
 # simple linear flow of coordinates, left to right, top down
-sub setPoints {  
+sub set_linear_points {  
   
-  
-  # my ( $length, $div, $offset ) = (10,2,50);  
   my ($length, $div, $offset) = @_;
 
   my @keys =  ( "x", "y");
@@ -177,47 +90,45 @@ sub setPoints {
     }
 
   return to_json($grid);
-  # return "[Flag: $flag], [Test: $test], [Div: $div], [Offset: $offset], [Length: $length]";
+  
 
 }
 # ---------------------------------------------------------------------------
-# get the maps.json by merging sequence.json and grid.json
-sub setMaps {
-
-# my ($seqdata, $grid) = @_;  
+# get the maps.json merging sequence.json and grid
+sub set_maps {
 
 my ($seqdata, $div,$offset) = @_;  
 my $length = @{$seqdata->{sequence}}; 
 
 my $maps = { maps => []};
-my $grid = from_json(setPoints($length,$div,$offset));
+my $grid = from_json(set_linear_points($length,$div,($offset*2)));
  my @keys =  ( "name", "translate");
  
 my $count = 0;
 
-foreach my $item (@{$seqdata->{sequence}}) {
- 
-        push ($maps->{maps},{$keys[0] =>$item->{name}, $keys[1] =>"$grid->{grid}[$count]->{x},$grid->{grid}[$count]->{y}"} );
-        
-        $count++;
-} 
 
-# {"maps":
-# [
-#    {"name":"symbol_1","translate":"0,0",  "rotate":"0", "scale":"0"}, 
-#    {"name":"symbol_1","translate":"100,0","rotate":"0", "scale":"0"},   
-#    {"name":"symbol_3","translate":"200,0","rotate":"0", "scale":"0"},   
-#    {"name":"symbol_4","translate":"300,0","rotate":"0", "scale":"0"},
-#    {"name":"symbol_2","translate":"400,0","rotate":"0", "scale":"0"}  
-# ]
-# }
+map { push ($maps->{maps},{$keys[0] =>$_->{name}, 
+	             $keys[1] =>"$grid->{grid}[$count]->{x},$grid->{grid}[$count]->{y}"} 
+	       ); $count++; 
+	} @{$seqdata->{sequence}};
 
-# my $length = @{$seqdata->{sequence}}; 
-
-return $maps;
-
+return to_json($maps);
 
 }
+# ---------------------------------------------------------------------------
+# read,update write json from and to file
+# read a file into hash, update hash, save hash back to file
+
+sub read_json_file {
+	
+	my $filename = shift; 
+	my $json = -e $filename ? read_file $filename : '{}';
+    
+	return from_json $json;
+	
+}
+
+
 # ---------------------------------------------------------------------------
 true;
 

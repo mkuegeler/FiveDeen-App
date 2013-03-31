@@ -30,14 +30,12 @@ template: "template_toolkit"
 # url to javascript library containing the symbol definitions. relative to www root
 symbols: /javascripts/symbols.js
 
-# json file containing the symbol sequence
-maps:
-    json: /home/perldev/workspace/FiveDeen-App/maps.json
-
-# default sequence file
+# default sequence file without layout
 sequence:
     json: /home/perldev/workspace/FiveDeen-App/sequence.json
 
-    # default grid file
-grid:
-    json: /home/perldev/workspace/FiveDeen-App/grid.json
+# json file containing the symbol sequence and the default layout as defined by set_linear_points
+maps:
+    json: /home/perldev/workspace/FiveDeen-App/maps.json
+    div: 6
+    offset: 50
