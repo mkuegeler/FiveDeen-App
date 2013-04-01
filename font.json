@@ -1,0 +1,13 @@
+{
+   "font" : [
+      {
+         "name" : "symbol_1","character":"a"
+      },
+      {
+         "name" : "symbol_2","character":"b"
+      },
+      {
+         "name" : "symbol_3","character":"c"
+      }
+   ]
+}

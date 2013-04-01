@@ -1,0 +1,32 @@
+<div class="container">
+<% header %>
+  <!-- Jumbotron -->
+  
+  	 <div class="jumbotron">
+        <form method="post">
+		  <fieldset>
+
+		    <h4>Type your text:</h4>
+		    <textarea rows="8" name="data"><% IF data %><% data %><% ELSE %>A sample text<% END %></textarea>
+		    <span class="help-block">Note: Currently, not more than 256 characters are allowed.</span>
+
+		    <button type="submit" class="btn btn-primary">Submit</button>
+		  </fieldset>
+		</form>
+        <p><% IF data %><% data %><% END %></p>
+      </div>
+  <hr>
+  <div class="footer">
+    <p>&copy; 5deen.com 2013</p>
+    <p>Michael Kuegeler</p>
+  </div>
+
+</div> <!-- /container -->
+
+<!-- debug stuff -->
+
+<script>
+     
+console.log("<% log %>");      
+
+</script>

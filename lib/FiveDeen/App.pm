@@ -19,17 +19,43 @@ hook before_template => sub {
 
 # ---------------------------------------------------------------------------
 
+# main page
 get '/' => sub {
 	template 'index', {
                'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
        };
 };
 
+# the input form (post/get)
+
+get '/form' => sub {
+	template 'form', {
+               'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
+       };
+};
+
+post '/form' => sub {
+	
+	my @data = split('',params->{data});
+	
+	template 'form', {
+		       'data' => params->{data},
+		       # 'log' => @data, 
+		 
+               'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
+       };
+	
+	
+	# redirect '/form';
+};
+
+#  the viewer
 get '/svg' => sub {
 	
-	
+	# next step: form request of userdata
 	my @userdata = (1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2);
-	my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
+	
+	# my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
 
     my $seqdata = read_json_file(config->{sequence}{json});
     
@@ -40,11 +66,6 @@ get '/svg' => sub {
 
     my $maps = from_json(set_maps($seqdata,$div,$offset));
 
-   
-    # my $log = set_sequence(@userdata);
-
-    
-   
 
     template 'embedded_svg', {
 
