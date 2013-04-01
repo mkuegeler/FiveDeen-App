@@ -77,3 +77,15 @@
   .footer  {
         text-align: center;
   }
+
+  .svg_area div {
+       align: center;
+  }
+
+  .embedded_svg
+  {
+   margin-left:auto;
+   margin-right:auto;
+   width:70%;   
+  }
+

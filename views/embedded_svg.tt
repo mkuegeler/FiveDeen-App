@@ -2,9 +2,8 @@
 <% header %>
   <!-- Jumbotron -->
   <div class="jumbotron">
-    <h3>Symbol Library</h3>
-
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="640" height="480">
+	
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="<% width %>" height="<% height %>" style="background-color:#cccccc">
 
 	<script type="text/ecmascript" xlink:href="/symbols"></script>
 	<script type="text/ecmascript" xlink:href="/include"></script>
@@ -24,7 +23,7 @@
 	</script>
               
 	</svg> 
-          
+       
   </div>
   <hr>
 
@@ -39,6 +38,6 @@
 <!-- debug stuff -->
 
 <script>
-console.log("debug");    
+console.log("<% log %>");    
 </script>
 

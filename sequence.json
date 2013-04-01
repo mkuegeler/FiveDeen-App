@@ -1,10 +1,88 @@
-{"sequence":
-[
-   {"name":"symbol_1"},	
-   {"name":"symbol_1"},		
-   {"name":"symbol_3"},		
-   {"name":"symbol_4"},
-   {"name":"symbol_2"},
-   {"name":"symbol_1"}	
-]
+{
+   "sequence" : [
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_4"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_4"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_4"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_4"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "name" : "symbol_2"
+      }
+   ]
 }

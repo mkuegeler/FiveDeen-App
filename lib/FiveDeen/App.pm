@@ -26,19 +26,36 @@ get '/' => sub {
 };
 
 get '/svg' => sub {
+	
+	
+	my @userdata = (1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2);
+	my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
 
     my $seqdata = read_json_file(config->{sequence}{json});
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
+    my $width = config->{maps}{width};
+    my $height = config->{maps}{height};
 
     my $maps = from_json(set_maps($seqdata,$div,$offset));
+
+   
+    # my $log = set_sequence(@userdata);
+
+    
+   
 
     template 'embedded_svg', {
 
                'maps' => $maps->{maps},
 
-               'offset' => $offset,              
+               # 'log' => $log,
+
+               'offset' => $offset, 
+               'width' => $width, 
+               'height' => $height,  
+             
                'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
                
                
@@ -94,6 +111,21 @@ sub set_linear_points {
 
 }
 # ---------------------------------------------------------------------------
+# create sequence.json 
+sub set_sequence {
+
+# sample: my @userdata = (1,2,4,1,2,1,2);
+my @data = @_;   
+my $key = "name";
+
+my $sequence = { sequence => []};
+
+map {push ($sequence->{sequence}, { $key => "symbol_$_"}) } @data;
+
+return to_json($sequence);
+
+}
+# ---------------------------------------------------------------------------
 # get the maps.json merging sequence.json and grid
 sub set_maps {
 
@@ -125,6 +157,20 @@ sub read_json_file {
 	my $json = -e $filename ? read_file $filename : '{}';
     
 	return from_json $json;
+	
+}
+
+# ---------------------------------------------------------------------------
+sub write_json_file {
+	
+	my ($filename, $new) = @_; 
+	
+	my $json = -e $filename ? read_file $filename : '{}';
+	my $old = from_json $json;
+	
+	write_file $filename, $new;
+    
+	return $new;
 	
 }
 

@@ -37,5 +37,7 @@ sequence:
 # json file containing the symbol sequence and the default layout as defined by set_linear_points
 maps:
     json: /home/perldev/workspace/FiveDeen-App/maps.json
-    div: 6
+    div: 8
     offset: 50
+    width: 825
+    height: 825 
