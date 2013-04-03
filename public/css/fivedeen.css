@@ -78,9 +78,9 @@
         text-align: center;
   }
 
-  .svg_area div {
-       align: center;
-  }
+  svg {
+	background-color:#e8e8e8;
+  }  
 
   .embedded_svg
   {

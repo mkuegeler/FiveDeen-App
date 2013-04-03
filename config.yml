@@ -34,6 +34,10 @@ symbols: /javascripts/symbols.js
 sequence:
     json: /home/perldev/workspace/FiveDeen-App/sequence.json
 
+# user string location
+string:
+    json: /home/perldev/workspace/FiveDeen-App/string.json
+
 # json file containing the symbol sequence and the default layout as defined by set_linear_points
 maps:
     json: /home/perldev/workspace/FiveDeen-App/maps.json

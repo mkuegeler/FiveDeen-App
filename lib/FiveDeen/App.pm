@@ -36,11 +36,13 @@ get '/form' => sub {
 
 post '/form' => sub {
 	
-	my @data = split('',params->{data});
+	# my @data = split('',params->{data});
+	
+	my $user_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 	
 	template 'form', {
 		       'data' => params->{data},
-		       # 'log' => @data, 
+		        # 'log' => string_to_json(params->{data}), 
 		 
                'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
        };
@@ -94,7 +96,8 @@ get '/symbols' => sub {
 	send_file config->{symbols};
 };
 
-
+#---------------------------------------------------------------------------
+# SUPPORT Routines
 #---------------------------------------------------------------------------
 # simple linear flow of coordinates, left to right, top down
 sub set_linear_points {  
@@ -196,6 +199,20 @@ sub write_json_file {
 }
 
 
+# ---------------------------------------------------------------------------
+# incoming string is disassembled and converted to json structure
+sub string_to_json {
+	
+	my @data = split('',shift);
+	my $key = "character";
+	
+	my $content = { string => []};
+	
+	map {push ($content->{string}, { $key => $_}) } @data;
+	
+	return to_json($content);
+	
+}
 # ---------------------------------------------------------------------------
 true;
 

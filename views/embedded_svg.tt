@@ -3,7 +3,7 @@
   <!-- Jumbotron -->
   <div class="jumbotron">
 	
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="<% width %>" height="<% height %>" style="background-color:#cccccc">
+    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="<% width %>" height="<% height %>">
 
 	<script type="text/ecmascript" xlink:href="/symbols"></script>
 	<script type="text/ecmascript" xlink:href="/include"></script>
