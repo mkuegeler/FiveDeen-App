@@ -1,0 +1,13 @@
+<div class="container">
+  <!-- Jumbotron -->
+  <div class="jumbotron">	
+  <a href="/form"><% svg %></a>
+  </div>
+  <hr>
+
+  <div class="footer">
+    <p>&copy; 5deen.com 2013</p>
+    <p>Michael Kuegeler</p>
+  </div>
+
+</div> <!-- /container -->

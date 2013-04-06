@@ -14,7 +14,9 @@ our $VERSION = '0.1';
 
 hook before_template => sub {
        my $tokens = shift;
-       $tokens->{'symbols'} = config->{symbols};
+       $tokens->{'symbols'} = config->{symbols}; 
+       $tokens->{'width'} = config->{maps}{width};
+       $tokens->{'height'} = config->{maps}{height};
 };
 
 # ---------------------------------------------------------------------------
@@ -22,7 +24,8 @@ hook before_template => sub {
 # main page
 get '/' => sub {
 	template 'index', {
-               'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
+               # 'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
+               'title' => config->{appname},              
        };
 };
 
@@ -30,21 +33,31 @@ get '/' => sub {
 
 get '/form' => sub {
 	template 'form', {
-               'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
+               #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
+               'title' => config->{appname},               
        };
 };
 
 post '/form' => sub {
 	
-	# my @data = split('',params->{data});
+	my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 	
-	my $user_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
+	my $seqdata = read_json_file(config->{sequence}{json});
+    
+    my $div = config->{maps}{div};
+    my $offset = config->{maps}{offset};
+    #my $width = config->{maps}{width};
+    #my $height = config->{maps}{height};
+
+    my $maps = from_json(set_maps($seqdata,$div,$offset));
 	
 	template 'form', {
 		       'data' => params->{data},
 		        # 'log' => string_to_json(params->{data}), 
+		       'title' => config->{appname},
 		 
-               'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },               
+               #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef }, 
+               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset,  },{ layout => undef },              
        };
 	
 	
@@ -55,31 +68,27 @@ post '/form' => sub {
 get '/svg' => sub {
 	
 	# next step: form request of userdata
-	my @userdata = (1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2);
-	
+	# my @userdata = (1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2);	
 	# my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
 
     my $seqdata = read_json_file(config->{sequence}{json});
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
-    my $width = config->{maps}{width};
-    my $height = config->{maps}{height};
+    #my $width = config->{maps}{width};
+    #my $height = config->{maps}{height};
 
     my $maps = from_json(set_maps($seqdata,$div,$offset));
 
+    
+    template 'full_screen', {
+     
+               # 'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },  
 
-    template 'embedded_svg', {
-
-               'maps' => $maps->{maps},
-
-               # 'log' => $log,
-
-               'offset' => $offset, 
-               'width' => $width, 
-               'height' => $height,  
-             
-               'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },
+               'title' => config->{appname},
+              
+               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset, },{ layout => undef },
+               
                
                
        };

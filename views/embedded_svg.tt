@@ -1,36 +1,14 @@
-<div class="container">
-<% header %>
-  <!-- Jumbotron -->
-  <div class="jumbotron">
-	
-    <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="<% width %>" height="<% height %>">
-
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt,<% offset %>)" width="<% width %>" height="<% height %>">
 	<script type="text/ecmascript" xlink:href="/symbols"></script>
 	<script type="text/ecmascript" xlink:href="/include"></script>
 
 	<defs id="templates"/>
-    
+   
     <script>	    	
 	   <% FOR m IN maps %>       
           new Symbols().use("<% m.name %>","translate(<% m.translate %>)");         
        <% END %>
 	</script>
-              
-	</svg> 
-       
-  </div>
-  <hr>
-
-  <div class="footer">
-    <p>&copy; 5deen.com 2013</p>
-    <p>Michael Kuegeler</p>
-  </div>
-
-</div> <!-- /container -->
-
-<!-- debug stuff -->
-
-<script>
-console.log("<% log %>");    
-</script>
+</svg> 
+ 
 
