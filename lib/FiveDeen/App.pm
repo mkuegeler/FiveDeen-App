@@ -14,7 +14,8 @@ our $VERSION = '0.1';
 
 hook before_template => sub {
        my $tokens = shift;
-       $tokens->{'symbols'} = config->{symbols}; 
+       # $tokens->{'symbols'} = config->{symbols}; 
+       $tokens->{'title'} = config->{appname}; 
        $tokens->{'width'} = config->{maps}{width};
        $tokens->{'height'} = config->{maps}{height};
 };
@@ -25,7 +26,7 @@ hook before_template => sub {
 get '/' => sub {
 	template 'index', {
                # 'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
-               'title' => config->{appname},              
+               #'title' => config->{appname},              
        };
 };
 
@@ -34,7 +35,7 @@ get '/' => sub {
 get '/form' => sub {
 	template 'form', {
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
-               'title' => config->{appname},               
+               #'title' => config->{appname},               
        };
 };
 
@@ -46,15 +47,17 @@ post '/form' => sub {
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
-    #my $width = config->{maps}{width};
-    #my $height = config->{maps}{height};
+    # my $width = config->{maps}{width};
+    # my $height = config->{maps}{height};
+
+    # my $offset = (config->{maps}{width}/config->{maps}{div});
 
     my $maps = from_json(set_maps($seqdata,$div,$offset));
 	
 	template 'form', {
 		       'data' => params->{data},
 		        # 'log' => string_to_json(params->{data}), 
-		       'title' => config->{appname},
+		       #'title' => config->{appname},
 		 
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef }, 
                'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset,  },{ layout => undef },              
@@ -67,16 +70,15 @@ post '/form' => sub {
 #  the viewer
 get '/svg' => sub {
 	
-	# next step: form request of userdata
-	# my @userdata = (1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2,1,2,4,1,2,1,2);	
-	# my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
+	# next step: form request of userdata (just a test sequence)
+	my @userdata = (1,2,4,1,5,1,6);	
+	my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
 
     my $seqdata = read_json_file(config->{sequence}{json});
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
-    #my $width = config->{maps}{width};
-    #my $height = config->{maps}{height};
+    # my $offset = (config->{maps}{width}/config->{maps}{div});
 
     my $maps = from_json(set_maps($seqdata,$div,$offset));
 
@@ -85,7 +87,7 @@ get '/svg' => sub {
      
                # 'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },  
 
-               'title' => config->{appname},
+               #'title' => config->{appname},
               
                'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset, },{ layout => undef },
                

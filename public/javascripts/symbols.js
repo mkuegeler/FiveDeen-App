@@ -182,7 +182,7 @@ Symbols.prototype.combinedSquareCircleSymbol = function(id,radius,style_1,style_
     
     var dim = (radius*2); 
     
-    // offset between outer rectangl  and inner circle
+    // offset between outer rectangle  and inner circle
     var factor = 0.1;
 	
 	var symbol = document.createElementNS(this.getNS(),"symbol"); 
@@ -221,7 +221,57 @@ Symbols.prototype.combinedSquareCircleSymbol = function(id,radius,style_1,style_
         document.getElementById(this.getLayer()).appendChild(symbol);
      
 }
+///////////////////////////////////////////////////////////////////////////////
 
+Symbols.prototype.singleLetterSymbol_A = function(id,radius,style_1,style_2)
+{
+	// Capital letter A
+	
+	//  <text x="250" y="150" 
+	//        font-family="Verdana" font-size="55" fill="blue" >
+	//    Hello, out there
+	//  </text>
+	
+	var data = "A";
+	var offset = (radius*((0.5)+this.getOffset())); 
+	
+	var dim = (radius*2); 
+  	
+	var symbol = document.createElementNS(this.getNS(),"symbol"); 
+	    symbol.setAttribute("id",id);	
+	
+	
+
+	var group = document.createElementNS(this.getNS(),"g");
+	     
+	    group.setAttribute("transform","translate("+(radius-offset)+","+(radius-offset)+")");
+	
+	var text = document.createElementNS(this.getNS(),"text");
+	var textnode = document.createTextNode(data);
+	
+	    text.setAttribute("x",(radius/13.7));
+        text.setAttribute("y",dim);
+        text.setAttribute("fill",style_1);
+        text.setAttribute("font-size",(dim*1.37));
+        text.appendChild(textnode);
+
+        group.appendChild(text);
+
+   	var rect = document.createElementNS(this.getNS(),"rect");
+
+        rect.setAttribute("x",0);
+        rect.setAttribute("y",0);
+	    rect.setAttribute("width",dim);
+        rect.setAttribute("height",dim); 
+        rect.setAttribute("style",style_2);	
+        group.appendChild(rect);
+
+        	
+	    symbol.appendChild(group);
+	    document.getElementById(this.getLayer()).appendChild(symbol);
+		
+}  
+///////////////////////////////////////////////////////////////////////////////
  
 ///////////////////////////////////////////////////////////////////////////////
 // The SYMBOL Library: End
