@@ -1,0 +1,19 @@
+{
+   "symbol" : [
+      {
+         "function" : "simpleCircleSymbol"
+      },
+      {
+         "name" : "symbol_1"
+      },
+      {
+         "radius" : 50
+      },
+      {
+         "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+      },
+      {
+         "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+      }
+   ]
+}

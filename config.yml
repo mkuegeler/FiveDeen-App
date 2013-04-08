@@ -45,3 +45,7 @@ maps:
     offset: 50
     width: 825
     height: 825 
+    
+# symbol library
+lib:
+    json: /home/perldev/workspace/FiveDeen-App/symbols.json    
