@@ -42,8 +42,9 @@
 <!-- debug stuff -->
 
 <script>
-// new Symbols().simpleCircleSymbol("symbol_1",offset,"stroke:#138788;stroke-width:2px;fill:#00ffcc");     
-<% FOR s IN log %>   
-// new Symbols().<% s.symbol.function %>("<% s.symbol.name %>",<% s.symbol.radius %>,"<% s.symbol.style %>");         
+<% FOR s IN symbols %>
+   <% FOR n IN s.symbol %>
+   // new Symbols().<% n.function %>("<% n.name %>",<% n.radius %><% FOR t IN n.styles %>,"<% t.style %>"<% END %>);
+   <% END %>
 <% END %>
 </script>

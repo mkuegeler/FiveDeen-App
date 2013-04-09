@@ -35,12 +35,12 @@ get '/' => sub {
 get '/form' => sub {
 	
 	# test only
-	my $data = read_json_file(config->{lib}{json});
+	# my $data = read_json_file(config->{lib}{json});
 	
 	template 'form', {
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
                #'title' => config->{appname},
-               'log' => $data->{symbols},              
+               #'symbols' => $data->{symbols},              
        };
 };
 
@@ -104,9 +104,9 @@ get '/svg' => sub {
 
 get '/include' => sub {
 	content_type 'text/ecmascript' ;
-	my $data = to_json(read_json_file(config->{lib}{json}));
+	my $data = read_json_file(config->{lib}{json});
 	
-	template 'include',{data => $data}, { layout => undef },   
+	template 'include',{symbols => $data->{symbols}}, { layout => undef },   
 };
 
 
