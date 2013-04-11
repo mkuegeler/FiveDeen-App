@@ -1,43 +1,31 @@
 {
    "string" : [
       {
-         "character" : "A"
+         "character" : "n"
+      },
+      {
+         "character" : "o"
+      },
+      {
+         "character" : "c"
+      },
+      {
+         "character" : "h"
       },
       {
          "character" : " "
       },
       {
-         "character" : "s"
-      },
-      {
-         "character" : "a"
-      },
-      {
-         "character" : "m"
-      },
-      {
-         "character" : "p"
-      },
-      {
-         "character" : "l"
-      },
-      {
          "character" : "e"
+      },
+      {
+         "character" : "i"
+      },
+      {
+         "character" : "n"
       },
       {
          "character" : " "
-      },
-      {
-         "character" : "t"
-      },
-      {
-         "character" : "e"
-      },
-      {
-         "character" : "x"
-      },
-      {
-         "character" : "t"
       }
    ]
 }

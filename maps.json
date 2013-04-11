@@ -1,15 +1,40 @@
-{"maps":
-[
-   {"name":"symbol_1","translate":"0,0",  "rotate":"0", "scale":"0"},	
-   {"name":"symbol_1","translate":"100,0","rotate":"0", "scale":"0"},		
-   {"name":"symbol_3","translate":"200,0","rotate":"0", "scale":"0"},		
-   {"name":"symbol_4","translate":"300,0","rotate":"0", "scale":"0"},
-   {"name":"symbol_2","translate":"400,0","rotate":"0", "scale":"0"}	
-]
+{
+   "sequence" : [
+      {
+         "character" : "n",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : "o",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : "c",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : "h",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : " ",
+         "name" : "symbol_0"
+      },
+      {
+         "character" : "e",
+         "name" : "symbol_4"
+      },
+      {
+         "character" : "i",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : "n",
+         "name" : "symbol_3"
+      },
+      {
+         "character" : " ",
+         "name" : "symbol_0"
+      }
+   ]
 }
-
-
-
-
-
-

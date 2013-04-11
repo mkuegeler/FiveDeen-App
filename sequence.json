@@ -1,25 +1,82 @@
 {
    "sequence" : [
       {
-         "name" : "symbol_1"
+         "name" : "symbol_1","character":"a"
       },
       {
-         "name" : "symbol_2"
+         "name" : "symbol_2","character":"b"
       },
       {
-         "name" : "symbol_4"
+         "name" : "symbol_3","character":"c"
       },
       {
-         "name" : "symbol_1"
+         "name" : "symbol_3","character":"d"
       },
       {
-         "name" : "symbol_5"
+         "name" : "symbol_4","character":"e"
       },
+	  {
+	     "name" : "symbol_5","character":"f"
+	  },
       {
-         "name" : "symbol_1"
+         "name" : "symbol_6","character":"g"
       },
+	  {
+	     "name" : "symbol_3","character":"h"
+	  },
       {
-         "name" : "symbol_6"
-      }
+         "name" : "symbol_3","character":"i"
+      },
+	  {
+	     "name" : "symbol_3","character":"j"
+	  },
+	  {
+	     "name" : "symbol_3","character":"k"
+	  },
+	  {
+	     "name" : "symbol_3","character":"l"
+	  },
+	  {
+	     "name" : "symbol_3","character":"m"
+	  },
+	  {
+	     "name" : "symbol_3","character":"n"
+	  },
+	  {
+	     "name" : "symbol_3","character":"o"
+	  },
+	  {
+	     "name" : "symbol_3","character":"p"
+	  },
+	  {
+	     "name" : "symbol_3","character":"q"
+	  },
+	  {
+	     "name" : "symbol_3","character":"r"
+	  },
+	  {
+	     "name" : "symbol_3","character":"s"
+	  },
+	  {
+	     "name" : "symbol_3","character":"t"
+	  },
+	  {
+	     "name" : "symbol_3","character":"u"
+	  },
+	  {
+	     "name" : "symbol_3","character":"v"
+	  },
+	  {
+	     "name" : "symbol_3","character":"w"
+	  },
+	  {
+	     "name" : "symbol_3","character":"x"
+	  },
+      {
+	     "name" : "symbol_3","character":"y"
+	  },
+	  {
+	     "name" : "symbol_3","character":"z"
+	  }
    ]
 }

@@ -48,7 +48,11 @@ post '/form' => sub {
 	
 	my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 	
-	my $seqdata = read_json_file(config->{sequence}{json});
+	# match incoming string (string.json) against font.json and save result to sequence.json
+	my $merged_string = write_json_file(config->{maps}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
+	
+	# my $seqdata = read_json_file(config->{sequence}{json});
+	my $seqdata = read_json_file(config->{maps}{json});
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
@@ -231,6 +235,38 @@ sub string_to_json {
 	return to_json($content);
 	
 }
+# ---------------------------------------------------------------------------
+# match incoming string (string.json) against font.json and save result to sequence.json
+sub font_to_sequence {
+	
+	my ($string, $font) = @_; 
+	my @keys =  ( "character", "name");
+	
+	my $count = 0;
+	my $character = "null";
+	my $name = "null";
+	
+	my $sequence = { sequence => []};
+	
+	map { $name = compare_character($_->{character},$font); push ($sequence->{sequence},{$keys[0] => $_->{character}, $keys[1] => $name}) } @{$string->{string}};
+	
+	return to_json($sequence);
+	
+}
+# ---------------------------------------------------------------------------
+# support routine: identify character in font.json, used in font_to_sequence
+
+sub compare_character {
+	
+   my ($character, $font) = @_; 
+   my $name = "symbol_0";
+
+   map {  if ($_->{character} eq $character) { $name = $_->{name}; }   } @{$font->{font}};
+	
+   return $name;	
+}
+
+
 # ---------------------------------------------------------------------------
 true;
 

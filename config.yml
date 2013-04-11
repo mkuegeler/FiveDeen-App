@@ -48,4 +48,8 @@ maps:
     
 # symbol library
 lib:
-    json: /home/perldev/workspace/FiveDeen-App/symbols.json    
+    json: /home/perldev/workspace/FiveDeen-App/symbols.json 
+    
+# the default font map
+font:
+    json: /home/perldev/workspace/FiveDeen-App/font.json       
