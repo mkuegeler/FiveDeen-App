@@ -40,11 +40,6 @@
 </div> <!-- /container -->
 
 <!-- debug stuff -->
-
 <script>
-<% FOR s IN symbols %>
-   <% FOR n IN s.symbol %>
-   // new Symbols().<% n.function %>("<% n.name %>",<% n.radius %><% FOR t IN n.styles %>,"<% t.style %>"<% END %>);
-   <% END %>
-<% END %>
+console.log(<% log %>);
 </script>

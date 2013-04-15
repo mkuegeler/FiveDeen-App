@@ -60,10 +60,11 @@
       }
    ]
 },
+
 {	
    "symbol" : [
       {
-         "function" : "singleLetterSymbol_A", "name" : "symbol_6", "radius" : 50,
+         "function" : "singleLetterSymbol_A", "name" : "symbol_A", "radius" : 50,
       
          "styles" : [
 	            { "style" : "#ff0000" },
@@ -72,6 +73,39 @@
       }
       
    ]
+},
+
+{	
+   "symbol" : [
+      {
+         "function" : "singleLetterSymbol_B", "name" : "symbol_B", "radius" : 50,
+      
+         "styles" : [
+	            { "style" : "#ff00ff" },
+	            { "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"}
+	     ] 	
+      }
+      
+   ]
+},
+
+{	
+   "symbol" : [
+      {
+         "function" : "singleLetterSymbol_C", "name" : "symbol_C", "radius" : 50, 
+      
+         "styles" : [
+	            { "style" : "#ffff00" },
+	            { "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"}
+	     ] 	
+      }
+      
+   ]
 }
+
+
+
+
+
 ]
 }

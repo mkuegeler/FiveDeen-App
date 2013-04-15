@@ -26,7 +26,8 @@ hook before_template => sub {
 get '/' => sub {
 	template 'index', {
                # 'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
-               #'title' => config->{appname},              
+               #'title' => config->{appname},  
+           
        };
 };
 
@@ -49,10 +50,11 @@ post '/form' => sub {
 	my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 	
 	# match incoming string (string.json) against font.json and save result to sequence.json
-	my $merged_string = write_json_file(config->{maps}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
+	# my $merged_string = write_json_file(config->{maps}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
+	my $mapped_string = write_json_file(config->{sequence}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
 	
-	# my $seqdata = read_json_file(config->{sequence}{json});
-	my $seqdata = read_json_file(config->{maps}{json});
+	my $seqdata = read_json_file(config->{sequence}{json});
+	# my $seqdata = read_json_file(config->{maps}{json});
     
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
@@ -61,11 +63,15 @@ post '/form' => sub {
 
     # my $offset = (config->{maps}{width}/config->{maps}{div});
 
+    #my $html_path = request->uri_base;	
+	
+    
     my $maps = from_json(set_maps($seqdata,$div,$offset));
 	
 	template 'form', {
 		       'data' => params->{data},
-		        # 'log' => string_to_json(params->{data}), 
+		
+		       # 'log' => $html_path, 
 		       #'title' => config->{appname},
 		 
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef }, 
@@ -80,8 +86,8 @@ post '/form' => sub {
 get '/svg' => sub {
 	
 	# next step: form request of userdata (just a test sequence)
-	my @userdata = (1,2,4,1,5,1,6);	
-	my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
+	#my @userdata = (1,2,4,1,5,1,6);	
+	#my $newdata = write_json_file(config->{sequence}{json},set_sequence(@userdata));
 
     my $seqdata = read_json_file(config->{sequence}{json});
     
@@ -258,12 +264,13 @@ sub font_to_sequence {
 
 sub compare_character {
 	
-   my ($character, $font) = @_; 
-   my $name = "symbol_0";
+    my ($character, $font) = @_; 
+    # my $name = "symbol_0";
+    my $name = "";
 
-   map {  if ($_->{character} eq $character) { $name = $_->{name}; }   } @{$font->{font}};
+    map {  if ($_->{character} eq $character) { $name = $_->{name}; }   } @{$font->{font}};
 	
-   return $name;	
+    return $name;	
 }
 
 

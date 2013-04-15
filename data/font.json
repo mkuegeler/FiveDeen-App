@@ -1,5 +1,5 @@
 {
-   "sequence" : [
+   "font" : [
       {
          "name" : "symbol_1","character":"a"
       },
@@ -77,6 +77,15 @@
 	  },
 	  {
 	     "name" : "symbol_3","character":"z"
+	  },
+	  {
+	     "name" : "symbol_A","character":"A"
+	  },
+	  {
+	     "name" : "symbol_B","character":"B"
+	  },
+	  {
+	     "name" : "symbol_C","character":"C"
 	  }
    ]
 }
