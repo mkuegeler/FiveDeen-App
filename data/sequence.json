@@ -5,52 +5,12 @@
          "name" : "symbol_A"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "s",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "a",
-         "name" : "symbol_1"
-      },
-      {
-         "character" : "m",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "p",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "l",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "e",
-         "name" : "symbol_4"
-      },
-      {
-         "character" : " ",
-         "name" : ""
-      },
-      {
-         "character" : "t",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "e",
-         "name" : "symbol_4"
-      },
-      {
-         "character" : "x",
-         "name" : "symbol_3"
-      },
-      {
-         "character" : "t",
-         "name" : "symbol_3"
+         "character" : "C",
+         "name" : "symbol_C"
       }
    ]
 }

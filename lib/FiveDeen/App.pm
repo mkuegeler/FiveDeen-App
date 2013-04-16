@@ -51,7 +51,7 @@ post '/form' => sub {
 	
 	# match incoming string (string.json) against font.json and save result to sequence.json
 	# my $merged_string = write_json_file(config->{maps}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
-	my $mapped_string = write_json_file(config->{sequence}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
+	my $mapped_string = write_json_file(config->{sequence}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{lib}{json})));
 	
 	my $seqdata = read_json_file(config->{sequence}{json});
 	# my $seqdata = read_json_file(config->{maps}{json});
@@ -264,11 +264,14 @@ sub font_to_sequence {
 
 sub compare_character {
 	
-    my ($character, $font) = @_; 
+    my ($character, $lib) = @_; 
     # my $name = "symbol_0";
     my $name = "";
 
-    map {  if ($_->{character} eq $character) { $name = $_->{name}; }   } @{$font->{font}};
+    # map {  if ($_->{character} eq $character) { $name = $_->{name}; }   } @{$lib->{symbols}};
+    map {     
+        map { if ($_->{character} eq $character) { $name = $_->{name}; } } @{$_->{symbol}};
+        }  @{$lib->{symbols}};
 	
     return $name;	
 }

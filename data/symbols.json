@@ -3,7 +3,7 @@
 {	
    "symbol" : [
       {
-         "function" : "simpleCircleSymbol", "name" : "symbol_1", "radius" : 50,
+         "function" : "simpleCircleSymbol", "name" : "symbol_1", "radius" : 50, "character" : "a",
       
          "styles" : [
 	            { "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc" }
@@ -15,7 +15,7 @@
 {	
    "symbol" : [
       {
-         "function" : "simpleCircleSymbol", "name" : "symbol_2", "radius" : 50, 
+         "function" : "simpleCircleSymbol", "name" : "symbol_2", "radius" : 50, "character" : "b",
      
          "styles" : [
 	            { "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00" }
@@ -27,7 +27,7 @@
 {	
    "symbol" : [
       {
-         "function" : "simpleCircleSymbol", "name" : "symbol_3", "radius" : 50, 
+         "function" : "simpleCircleSymbol", "name" : "symbol_3", "radius" : 50, "character" : "c",
       
          "styles" : [
 	            { "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc" }
@@ -39,7 +39,7 @@
 {	
    "symbol" : [
       {
-         "function" : "simpleSquareSymbol", "name" : "symbol_4", "radius" : 50, 
+         "function" : "simpleSquareSymbol", "name" : "symbol_4", "radius" : 50, "character" : "d",
      
          "styles" : [
 	            { "style" : "stroke:#ff0000;stroke-width:1px;fill:none" }
@@ -51,7 +51,7 @@
 {	
    "symbol" : [
       {
-         "function" : "combinedSquareCircleSymbol", "name" : "symbol_5", "radius" : 50, 
+         "function" : "combinedSquareCircleSymbol", "name" : "symbol_5", "radius" : 50, "character" : "e",
       
          "styles" : [
 	            { "style" : "stroke:#ff0000;stroke-width:1px;fill:none" },
@@ -64,7 +64,7 @@
 {	
    "symbol" : [
       {
-         "function" : "singleLetterSymbol_A", "name" : "symbol_A", "radius" : 50,
+         "function" : "singleLetterSymbol_A", "name" : "symbol_A", "radius" : 50, "character" : "A",
       
          "styles" : [
 	            { "style" : "#ff0000" },
@@ -78,7 +78,7 @@
 {	
    "symbol" : [
       {
-         "function" : "singleLetterSymbol_B", "name" : "symbol_B", "radius" : 50,
+         "function" : "singleLetterSymbol_B", "name" : "symbol_B", "radius" : 50, "character" : "B",
       
          "styles" : [
 	            { "style" : "#ff00ff" },
@@ -92,7 +92,7 @@
 {	
    "symbol" : [
       {
-         "function" : "singleLetterSymbol_C", "name" : "symbol_C", "radius" : 50, 
+         "function" : "singleLetterSymbol_C", "name" : "symbol_C", "radius" : 50, "character" : "C",
       
          "styles" : [
 	            { "style" : "#ffff00" },
