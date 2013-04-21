@@ -8,18 +8,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 function init (evt,offset) {
 
-// new Symbols().simpleCircleSymbol("symbol_1",offset,"stroke:#138788;stroke-width:2px;fill:#00ffcc");
-
-// new Symbols().simpleCircleSymbol("symbol_2",offset,"stroke:#00ff00;stroke-width:2px;fill:#ffcc00");
-
-// new Symbols().simpleCircleSymbol("symbol_3",offset,"stroke:#00ffff;stroke-width:2px;fill:#ffffcc");
-
-// new Symbols().simpleSquareSymbol("symbol_4",offset,"stroke:#ff0000;stroke-width:1px;fill:none");
-
-// new Symbols().combinedSquareCircleSymbol("symbol_5",offset,"stroke:#ff0000;stroke-width:1px;fill:none","stroke:#0000ff;stroke-width:1px;fill:none");
-
-// new Symbols().singleLetterSymbol_A("symbol_6",offset,"#ff0000","stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none");
-
 <% FOR s IN symbols %>
 <% FOR n IN s.symbol %>
 new Symbols().<% n.function %>("<% n.name %>",<% n.radius %><% FOR t IN n.styles %>,"<% t.style %>"<% END %>);

@@ -111,6 +111,17 @@ get '/svg' => sub {
        };
 };
 
+# the symbols library form (post/get)
+
+get '/library' => sub {
+	
+    my $data = read_json_file(config->{lib}{json});
+
+    template 'library',{symbols => $data->{symbols}}, 
+
+};
+
+
 
 get '/include' => sub {
 	content_type 'text/ecmascript' ;

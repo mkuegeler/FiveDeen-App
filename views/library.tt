@@ -1,0 +1,109 @@
+<div class="container">
+	<div class="masthead">
+	    <h3 class="muted"><% IF title %><% title %><% ELSE %>No Title<% END %></h3>
+	    <div class="navbar">
+	      <div class="navbar-inner">
+	        <div class="container">
+	          <ul class="nav">
+	            <li><a href="/">Home</a></li>
+	            <li class="active"><a href="#">Library</a></li>                
+	            <li><a href="#">Documentation</a></li>
+	            <li><a href="#">About</a></li>
+	            <li><a href="#">Contact</a></li>
+	            <li><a href="#">Deutsch</a></li>
+	          </ul>
+	        </div>
+	      </div>
+	    </div><!-- /.navbar -->
+	</div>
+  <!-- Jumbotron -->
+  
+  	 <div class="jumbotron">
+	
+	 
+        <form class="form-inline" method="post">
+		  <fieldset>
+
+		    <legend>Symbols.json</legend>
+	
+		
+		    <% FOR s IN symbols %>
+			     <% FOR n IN s.symbol %>
+			
+			<div class="accordion" id="accordion1">
+				
+				<div class="accordion-group">
+				    <div class="accordion-heading">
+				      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion1" href="#collapse<% n.name %>">
+				        Function: <% n.function %>. Name: <% n.name %>
+				      </a>
+				    </div>
+				    <div id="collapse<% n.name %>" class="accordion-body collapse">
+				      <div class="accordion-inner">
+
+						 <div class="control-group">
+						     <label class="control-label">Name:</label>
+						     <div class="controls">						 
+						     <input type="text" value="<% n.name %>">
+						     </div>
+						</div>
+
+						<div class="control-group"> 
+						     <label class="control-label">Radius:</label>
+						     <div class="controls">					 	
+						     <input type="text" value="<% n.radius %>">
+						     </div>
+						 </div>
+
+						 <div class="control-group">
+						     <label class="control-label">Character:</label>
+						     <div class="controls">						 
+						     <input type="text" value="<% n.character %>">
+						     </div>
+					    </div>
+
+					       <% FOR t IN n.styles %>
+					   	 <div class="control-group">		
+							 <label class="control-label">Style:</label>
+							 <div class="controls">						 								       
+							 <input type="text" value="<% t.style %>">
+							 
+							 </div>
+							 
+							 <span class="help-block">
+								<br/>
+								<svg width="100" height="100">
+								    <rect x="0" y="0" width="100" height="100" style="<% t.style %>"/>
+							    </svg>
+							</span> 
+							 
+							
+						 </div>			
+					      <% END %>
+
+				      </div>
+				    </div>
+				  </div>	 
+				
+			</div>
+			    
+		  <% END %>
+    	<% END %>
+		
+		    <button type="submit" class="btn btn-primary">Submit</button>
+		  </fieldset>
+		</form>
+      
+      </div>
+  <hr>
+  <div class="footer">
+    <p>&copy; 5deen.com 2013</p>
+    <p>Michael Kuegeler</p>
+  </div>
+
+</div> <!-- /container -->
+
+<!-- debug stuff -->
+<script>
+console.log(<% log %>);
+</script>

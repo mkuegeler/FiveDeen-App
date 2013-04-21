@@ -49,6 +49,6 @@ maps:
 lib:
     json: /home/perldev/workspace/FiveDeen-App/data/symbols.json 
     
-# the default font map
+# the default font map (opsolete. see symbols.json)
 font:
     json: /home/perldev/workspace/FiveDeen-App/data/font.json       
