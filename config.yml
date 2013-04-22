@@ -27,6 +27,20 @@ template: "template_toolkit"
 #     start_tag: '[%'
 #     end_tag:   '%]'
 
+# Database connections
+
+plugins:
+      Database:
+        connections:
+             fivedeen:   
+                      driver: 'Pg'
+                      host: 'localhost'
+                      port: '5432'
+                      database: 'fivedeen'
+                      username: 'fivedeen'
+                      password: 'fivedeen'
+
+
 # url to javascript library containing the symbol definitions. relative to www root
 symbols: /javascripts/symbols.js
 

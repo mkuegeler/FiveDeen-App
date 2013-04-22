@@ -1,5 +1,6 @@
 package FiveDeen::App;
 use Dancer ':syntax';
+use Dancer::Plugin::Database;
 
 use File::Slurp qw(read_file write_file);
 
@@ -115,6 +116,7 @@ get '/svg' => sub {
 
 get '/library' => sub {
 	
+    my $fivedeen_dbh = database('fivedeen');
     my $data = read_json_file(config->{lib}{json});
 
     template 'library',{symbols => $data->{symbols}}, 
