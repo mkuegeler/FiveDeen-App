@@ -48,15 +48,23 @@ get '/form' => sub {
 
 post '/form' => sub {
 	
-	my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
-	
+	my $fivedeen_dbh = database('fivedeen');
+
+        my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
+
 	# match incoming string (string.json) against font.json and save result to sequence.json
 	# my $merged_string = write_json_file(config->{maps}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{font}{json})));
 	my $mapped_string = write_json_file(config->{sequence}{json},font_to_sequence(read_json_file(config->{string}{json}),read_json_file(config->{lib}{json})));
 	
 	my $seqdata = read_json_file(config->{sequence}{json});
 	# my $seqdata = read_json_file(config->{maps}{json});
-    
+        
+        # my $fivedeen_dbh = database('fivedeen');
+        # my $table = "symbols";
+        # my $row  = $fivedeen_dbh->quick_select($table, { id => 1 });
+        # $fivedeen_dbh->quick_insert($table,{id => 1, data => '{"name":"test"}' }); 
+        # $fivedeen_dbh->quick_insert($table,{id => 1, data => to_json($seqdata) });
+ 
     my $div = config->{maps}{div};
     my $offset = config->{maps}{offset};
     # my $width = config->{maps}{width};
@@ -68,7 +76,7 @@ post '/form' => sub {
 	
     
     my $maps = from_json(set_maps($seqdata,$div,$offset));
-	
+
 	template 'form', {
 		       'data' => params->{data},
 		
@@ -117,9 +125,18 @@ get '/svg' => sub {
 get '/library' => sub {
 	
     my $fivedeen_dbh = database('fivedeen');
-    my $data = read_json_file(config->{lib}{json});
+    my $table = "symbols";
 
-    template 'library',{symbols => $data->{symbols}}, 
+    my $data = read_json_file(config->{lib}{json});
+    my $row  = $fivedeen_dbh->quick_select($table,{id => 1} );
+    
+    # unless there's is at least one database record in table 'symbols', the json file is used as a backup 
+    if (!$row) {
+          $fivedeen_dbh->quick_insert($table,{ data => to_json($data) });
+    } 
+    else { $data = from_json($row->{data});   }
+    
+           template 'library',{symbols => $data->{symbols}}, 
 
 };
 
