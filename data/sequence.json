@@ -5,52 +5,56 @@
          "name" : "symbol_A"
       },
       {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
          "character" : " ",
          "name" : ""
       },
       {
-         "character" : "s",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "a",
-         "name" : "symbol_1"
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "m",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "p",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "l",
-         "name" : ""
-      },
-      {
-         "character" : "e",
-         "name" : "symbol_5"
-      },
-      {
-         "character" : " ",
-         "name" : ""
-      },
-      {
-         "character" : "t",
-         "name" : ""
-      },
-      {
-         "character" : "e",
-         "name" : "symbol_5"
-      },
-      {
-         "character" : "x",
-         "name" : ""
-      },
-      {
-         "character" : "t",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       }
    ]
 }

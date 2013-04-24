@@ -72,18 +72,17 @@
 							 
 							 <span class="help-block">
 								<br/>
-								<svg width="100" height="100">
+								  <svg width="100" height="100">
 								    <rect x="0" y="0" width="100" height="100" style="<% t.style %>"/>
-							    </svg>
-							</span> 
-							 
+							      </svg>
+							    <br/> 
+							</span>
 							
 						 </div>			
 					      <% END %>
-
-				      </div>
+    			      </div>
 				    </div>
-				  </div>	 
+			  </div>	 
 				
 			</div>
 			    

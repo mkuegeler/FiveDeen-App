@@ -11,6 +11,11 @@ use File::Basename;
 our $VERSION = '0.1';
 
 # ---------------------------------------------------------------------------
+# global settings 
+# database connections
+my $fivedeen_dbh = database('fivedeen');
+
+# ---------------------------------------------------------------------------
 # hooks
 
 hook before_template => sub {
@@ -124,7 +129,7 @@ get '/svg' => sub {
 
 get '/library' => sub {
 	
-    my $fivedeen_dbh = database('fivedeen');
+    
     my $table = "symbols";
 
     my $data = read_json_file(config->{lib}{json});
