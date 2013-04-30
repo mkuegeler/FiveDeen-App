@@ -72,16 +72,24 @@
 							 
 							 <span class="help-block">
 								<br/>
-								  <svg width="100" height="100">
-								    <rect x="0" y="0" width="100" height="100" style="<% t.style %>"/>
+								  <svg width="100" height="50">
+								    <rect x="0" y="0" width="100" height="50" style="<% t.style %>"/>
 							      </svg>
-							    <br/> 
+							    
 							</span>
 							
 						 </div>			
 					      <% END %>
+					
+					     <span class="help-block">						
+							  <iframe src="/single/<% n.name %>" class="previewIframe" seamless></iframe>
+						    <br/><p>Preview</p> 
+						</span>     
+					
+					
     			      </div>
-				    </div>
+				    	
+				   </div>
 			  </div>	 
 				
 			</div>

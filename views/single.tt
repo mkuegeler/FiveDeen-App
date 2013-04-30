@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt)" width="120" height="120">
+	<script type="text/ecmascript" xlink:href="/symbols"></script>
+	<script type="text/ecmascript" xlink:href="/include"></script>
+
+	<defs id="templates"/>
+   
+    <script>	    	
+	       
+          new Symbols().use("<% name %>","translate(0,0)");         
+       
+	</script>
+</svg> 
+ 
+

@@ -71,11 +71,11 @@ post '/form' => sub {
         # $fivedeen_dbh->quick_insert($table,{id => 1, data => to_json($seqdata) });
  
     my $div = config->{maps}{div};
-    my $offset = config->{maps}{offset};
+    # my $offset = config->{maps}{offset};
     # my $width = config->{maps}{width};
     # my $height = config->{maps}{height};
 
-    # my $offset = (config->{maps}{width}/config->{maps}{div});
+    my $offset = (config->{maps}{width}/config->{maps}{div});
 
     #my $html_path = request->uri_base;	
 	
@@ -89,7 +89,7 @@ post '/form' => sub {
 		       #'title' => config->{appname},
 		 
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef }, 
-               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset,  },{ layout => undef },              
+               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps} },{ layout => undef },              
        };
 	
 	
@@ -118,7 +118,7 @@ get '/svg' => sub {
 
                #'title' => config->{appname},
               
-               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, offset => $offset, },{ layout => undef },
+               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps} },{ layout => undef },
                
                
                
@@ -158,6 +158,14 @@ get '/include' => sub {
 get '/symbols' => sub {
 	send_file config->{symbols};
 };
+
+# single symbol viewer
+get '/single/:name' => sub {
+ 
+	template 'single.tt', { name => params->{name} },{ layout => undef };
+};
+
+
 
 #---------------------------------------------------------------------------
 # SUPPORT Routines

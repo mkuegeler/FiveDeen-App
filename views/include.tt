@@ -6,7 +6,7 @@
  * 
  */
 ///////////////////////////////////////////////////////////////////////////////
-function init (evt,offset) {
+function init (evt) {
 
 <% FOR s IN symbols %>
 <% FOR n IN s.symbol %>
