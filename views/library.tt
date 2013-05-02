@@ -80,11 +80,11 @@
 							
 						 </div>			
 					      <% END %>
-					
-					     <span class="help-block">						
-							  <iframe src="/single/<% n.name %>" class="previewIframe" seamless></iframe>
-						    <br/><p>Preview</p> 
-						</span>     
+					     
+					     <span class="help-block">												
+							  <iframe src="/single/<% n.name %>" class="previewIframe" align="middle"></iframe>
+						    <br/><p><a href="/zoom/<% n.name %>/<% zoom %>/library" alt="Zoom">Preview (Zoom)</a></p>   
+						</span>   
 					
 					
     			      </div>

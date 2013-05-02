@@ -29,7 +29,7 @@
 		    <button type="submit" class="btn btn-primary">Submit</button>
 		  </fieldset>
 		</form>
-        <p><% IF svg %><a href="/svg"><% svg %></a><% END %></p>
+        <p><% IF svg %><a href="/svg/form"><% svg %></a><% END %></p>
       </div>
   <hr>
   <div class="footer">

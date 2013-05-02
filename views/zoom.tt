@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg" onload="init(evt)" width="<% width %>" height="<% height %>">
+	<script type="text/ecmascript" xlink:href="/symbols"></script>
+	<script>	
+	function init (evt) {
+		<% FOR s IN symbols %>
+		  <% FOR n IN s.symbol %>		
+		    <% IF n.name == name %>		
+		      new Symbols().<% n.function %>("<% n.name %>",<% radius %><% FOR t IN n.styles %>,"<% t.style %>"<% END %>);		
+		    <% END %>		
+		  <% END %>
+		<% END %>
+	}
+	</script>
+	<defs id="templates"/>
+    <script>
+          new Symbols().use("<% name %>","translate(35,35)"); 
+	</script>
+</svg> 
+ 
+

@@ -1,7 +1,7 @@
 {	
    "symbol" : [
       {
-         "function" : "simpleCircleSymbol", "name" : "symbol_1", "radius" : 50,
+         "function" : "simpleCircleSymbol", "name" : "symbol_1", "radius" : 50,"character" : "a",
       
          "styles" : [
 	            { "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc" }

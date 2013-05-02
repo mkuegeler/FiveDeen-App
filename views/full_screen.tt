@@ -1,7 +1,7 @@
 <div class="container">
   <!-- Jumbotron -->
   <div class="jumbotron">	
-  <a href="/form"><% svg %></a>
+  <a href="/<% back %>"><% svg %></a>  
   </div>
   <hr>
 

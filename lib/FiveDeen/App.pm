@@ -71,11 +71,11 @@ post '/form' => sub {
         # $fivedeen_dbh->quick_insert($table,{id => 1, data => to_json($seqdata) });
  
     my $div = config->{maps}{div};
-    # my $offset = config->{maps}{offset};
+    my $offset = config->{maps}{offset};
     # my $width = config->{maps}{width};
     # my $height = config->{maps}{height};
 
-    my $offset = (config->{maps}{width}/config->{maps}{div});
+    # my $offset = (config->{maps}{width}/config->{maps}{div});
 
     #my $html_path = request->uri_base;	
 	
@@ -97,7 +97,7 @@ post '/form' => sub {
 };
 
 #  the viewer
-get '/svg' => sub {
+get '/svg/:back' => sub {
 	
 	# next step: form request of userdata (just a test sequence)
 	#my @userdata = (1,2,4,1,5,1,6);	
@@ -117,6 +117,8 @@ get '/svg' => sub {
                # 'header' =>  template 'header.tt', { title => config->{appname}, },{ layout => undef },  
 
                #'title' => config->{appname},
+
+               'back' => params->{back}, 
               
                'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps} },{ layout => undef },
                
@@ -134,6 +136,9 @@ get '/library' => sub {
 
     my $data = read_json_file(config->{lib}{json});
     my $row  = $fivedeen_dbh->quick_select($table,{id => 1} );
+
+    my $zoom_factor = 300;
+    
     
     # unless there's is at least one database record in table 'symbols', the json file is used as a backup 
     if (!$row) {
@@ -141,7 +146,7 @@ get '/library' => sub {
     } 
     else { $data = from_json($row->{data});   }
     
-           template 'library',{symbols => $data->{symbols}}, 
+           template 'library',{symbols => $data->{symbols}, zoom => $zoom_factor }, 
 
 };
 
@@ -166,6 +171,20 @@ get '/single/:name' => sub {
 };
 
 
+# zoom symbol viewer
+get '/zoom/:name/:radius/:back' => sub {
+	
+	my $data = read_json_file(config->{lib}{json});
+	
+	template 'full_screen', {
+		
+		       'back' => params->{back}, 
+              
+               'svg' =>  template 'zoom.tt', {symbols => $data->{symbols}, name => params->{name},radius => params->{radius} },{ layout => undef },
+               
+       };
+	
+};
 
 #---------------------------------------------------------------------------
 # SUPPORT Routines

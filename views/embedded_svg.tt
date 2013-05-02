@@ -9,6 +9,8 @@
           new Symbols().use("<% m.name %>","translate(<% m.translate %>)");         
        <% END %>
 	</script>
+	
+
 </svg> 
  
 
