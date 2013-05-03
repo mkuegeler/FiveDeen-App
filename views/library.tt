@@ -6,7 +6,7 @@
 	        <div class="container">
 	          <ul class="nav">
 	            <li><a href="/">Home</a></li>
-	            <li class="active"><a href="#">Library</a></li>                
+	            <li class="active"><a href="/libs">Symbol Libraries</a></li>                
 	            <li><a href="#">Documentation</a></li>
 	            <li><a href="#">About</a></li>
 	            <li><a href="#">Contact</a></li>
@@ -24,7 +24,7 @@
         <form class="form-inline" method="post">
 		  <fieldset>
 
-		    <legend>Symbols.json</legend>
+		    <legend>Symbols.json [Library ID: <% id %>]</legend>
 	
 		
 		    <% FOR s IN symbols %>

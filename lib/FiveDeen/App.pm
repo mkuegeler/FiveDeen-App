@@ -1,6 +1,8 @@
 package FiveDeen::App;
 use Dancer ':syntax';
+
 use Dancer::Plugin::Database;
+use Dancer::Plugin::SimpleCRUD;
 
 use File::Slurp qw(read_file write_file);
 
@@ -127,26 +129,44 @@ get '/svg/:back' => sub {
        };
 };
 
+
+get '/libs' => sub {
+   
+    my $table = "symbols";
+
+    my @select  = $fivedeen_dbh->quick_select($table,{} );
+	
+	my $libs = from_json(select_to_json(@select));
+    
+           template 'libs',{libs => $libs->{select} }, 
+
+};
+
+
+
+
 # the symbols library form (post/get)
 
-get '/library' => sub {
+get '/library/:id' => sub {
 	
     
     my $table = "symbols";
 
-    my $data = read_json_file(config->{lib}{json});
-    my $row  = $fivedeen_dbh->quick_select($table,{id => 1} );
+    # my $data = read_json_file(config->{lib}{json});
+    my $row  = $fivedeen_dbh->quick_select($table,{id => params->{id}} );
+
+    my $data = from_json($row->{data});
 
     my $zoom_factor = 300;
     
     
-    # unless there's is at least one database record in table 'symbols', the json file is used as a backup 
-    if (!$row) {
-          $fivedeen_dbh->quick_insert($table,{ data => to_json($data) });
-    } 
-    else { $data = from_json($row->{data});   }
+    # unless there's is at least one database record in table 'symbols', the default json file is used as a backup 
+    #if (!$row) {
+        #  $fivedeen_dbh->quick_insert($table,{ data => to_json($data) });
+    #} 
+    #else { $data = from_json($row->{data});   }
     
-           template 'library',{symbols => $data->{symbols}, zoom => $zoom_factor }, 
+           template 'library',{symbols => $data->{symbols}, id => params->{id}, zoom => $zoom_factor }, 
 
 };
 
@@ -184,6 +204,26 @@ get '/zoom/:name/:radius/:back' => sub {
                
        };
 	
+};
+
+# simple CRUD example
+
+simple_crud (
+	
+    record_title => 'Symbol',
+    db_table => 'symbols',
+    db_connection_name => 'fivedeen',
+    prefix => '/symboltable',
+    
+    deletable => 'yes',
+    sortable => 'yes',
+    paginate => 5,
+    downloadable => 1,
+    
+);
+
+get '/symboltable' => sub {
+    redirect '/symboltable';
 };
 
 #---------------------------------------------------------------------------
@@ -338,6 +378,21 @@ sub compare_character {
     return $name;	
 }
 
+# ---------------------------------------------------------------------------
+# converts a "select * from symbols" array to json 
+sub select_to_json {
+
+
+my @data = @_;   
+my @keys =  ( "id", "name");
+
+my $select = { select => []};
+
+map {push ($select->{select}, { $keys[0] => $_->{id}, $keys[1] => $_->{name} }) } @data;
+
+return to_json($select);
+
+}
 
 # ---------------------------------------------------------------------------
 true;

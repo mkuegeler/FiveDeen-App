@@ -1,49 +1,13 @@
 {
    "string" : [
       {
-         "character" : "B"
+         "character" : "A"
       },
       {
-         "character" : "B"
+         "character" : "A"
       },
       {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
+         "character" : "A"
       }
    ]
 }

@@ -1,0 +1,8 @@
+# 03.05.2013: Additional CPAN Modules 
+Dancer::Plugin::SimpleCRUD
+HTML::Template      
+Text::Template     
+CGI::FastTemplate   
+CGI::SSI            
+CGI::Session         
+

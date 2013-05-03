@@ -5,8 +5,8 @@
 	      <div class="navbar-inner">
 	        <div class="container">
 	          <ul class="nav">
-	            <li class="active"><a href="/">Home</a></li>
-	            <li><a href="/libs">Symbol Libraries</a></li>                
+	            <li><a href="/">Home</a></li>
+	            <li class="active"><a href="#">Symbol Libraries</a></li>                
 	            <li><a href="#">Documentation</a></li>
 	            <li><a href="#">About</a></li>
 	            <li><a href="#">Contact</a></li>
@@ -17,24 +17,37 @@
 	    </div><!-- /.navbar -->
 	</div>
   <!-- Jumbotron -->
-  <div class="jumbotron">
-    <h1>Reading Machine</h1>
-    <p class="lead">Visualize your Text. Get your ideas coded.</p>
-    <a class="btn btn-large btn-success" href="/form">Try Out!</a>
-  </div>
+  
+  	 <div class="jumbotron">
+	
+	 
+        <form class="form-inline" method="post">
+		  <fieldset>
 
-       <!-- Example row of columns -->
-  <div class="jumbotron">
-
-	            
-
-  </div>
-
+		    <legend>Symbol Libraries</legend>
+	    
+			     <% FOR l IN libs %>
+		     
+				        <div><a href="/library/<% l.id %>">Library ID: <% l.id %> Name: <% l.name %></a></div>
+				      
+			    
+		         <% END %>
+    	         <br/>
+		
+		    <button type="submit" class="btn btn-primary">Submit</button>
+		  </fieldset>
+		</form>
+      
+      </div>
   <hr>
-
   <div class="footer">
     <p>&copy; 5deen.com 2013</p>
     <p>Michael Kuegeler</p>
   </div>
 
 </div> <!-- /container -->
+
+<!-- debug stuff -->
+<script>
+console.log(<% log %>);
+</script>
