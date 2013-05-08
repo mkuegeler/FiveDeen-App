@@ -213,17 +213,21 @@ simple_crud (
     record_title => 'Symbol',
     db_table => 'symbols',
     db_connection_name => 'fivedeen',
-    prefix => '/symboltable',
+    prefix => '/symbollibs',
+    display_columns  => [ qw( id name description ) ],
+
+    template => 'symbollibs.tt', 
+    table      => {border => 0},     # wrap form in <table>
     
     deletable => 'yes',
     sortable => 'yes',
     paginate => 5,
-    downloadable => 1,
+    downloadable => 0,
     
 );
 
-get '/symboltable' => sub {
-    redirect '/symboltable';
+get '/symbollibs' => sub {
+    redirect '/symbollibs';
 };
 
 #---------------------------------------------------------------------------
@@ -384,15 +388,24 @@ sub select_to_json {
 
 
 my @data = @_;   
-my @keys =  ( "id", "name");
+my @keys =  ( "id", "name", "description");
 
 my $select = { select => []};
 
-map {push ($select->{select}, { $keys[0] => $_->{id}, $keys[1] => $_->{name} }) } @data;
+map {push ($select->{select}, { $keys[0] => $_->{id}, $keys[1] => $_->{name}, $keys[2] => $_->{description} }) } @data;
 
 return to_json($select);
 
 }
+
+# ---------------------------------------------------------------------------
+# example how to import a database schema
+sub init_db {
+  my $db = connect_db();
+  my $schema = read_file('./schema.sql');
+  $db->do($schema) or die $db->errstr;
+}
+
 
 # ---------------------------------------------------------------------------
 true;
