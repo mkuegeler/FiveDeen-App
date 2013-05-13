@@ -19,13 +19,15 @@
   <!-- Jumbotron -->
   
   	 <div class="jumbotron">
-	
-	 
+	 <% FOR d IN delete %>
+	 <p><% d %></p>
+	 <% END %>
         <form class="form-inline" method="post">
 		  <fieldset>
 
 		    <legend>Symbols.json [Library ID: <% id %>]</legend>
-	
+	        
+	        <input type="hidden" name="secret" value="test it"></input> 
 		
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
@@ -44,21 +46,21 @@
 						 <div class="control-group">
 						     <label class="control-label">Name:</label>
 						     <div class="controls">						 
-						     <input type="text" value="<% n.name %>">
+						     <input type="text" name="name" value="<% n.name %>">
 						     </div>
 						</div>
 
 						<div class="control-group"> 
 						     <label class="control-label">Radius:</label>
 						     <div class="controls">					 	
-						     <input type="text" value="<% n.radius %>">
+						     <input type="text" name="radius" value="<% n.radius %>">
 						     </div>
 						 </div>
 
 						 <div class="control-group">
 						     <label class="control-label">Character:</label>
 						     <div class="controls">						 
-						     <input type="text" value="<% n.character %>">
+						     <input type="text" name="character" value="<% n.character %>">
 						     </div>
 					    </div>
 
@@ -66,7 +68,7 @@
 					   	 <div class="control-group">		
 							 <label class="control-label">Style:</label>
 							 <div class="controls">						 								       
-							 <input type="text" value="<% t.style %>">
+							 <input type="text" name="style" value="<% t.style %>">
 							 
 							 </div>
 							 
@@ -83,9 +85,12 @@
 					     
 					     <span class="help-block">												
 							  <iframe src="/single/<% n.name %>" class="previewIframe" align="middle"></iframe>
-						    <br/><p><a href="/zoom/<% n.name %>/<% zoom %>/library" alt="Zoom">Preview (Zoom)</a></p>   
+						    <br/><p><a href="/zoom/<% n.name %>/<% zoom %>/library/<% id %>" alt="Zoom">Preview (Zoom)</a></p>   
 						</span>   
 					
+					    <label class="checkbox">
+						      <input type="checkbox" name="delete" value="1">Delete
+						    </label>
 					
     			      </div>
 				    	
@@ -96,8 +101,17 @@
 			    
 		  <% END %>
     	<% END %>
+
+
+        
 		
-		    <button type="submit" class="btn btn-primary">Submit</button>
+		    <div>
+			  <button type="submit" class="btn btn-small btn-primary">New</button>
+			  <button type="submit" class="btn btn-small btn-warning">Edit</button>
+			  <button type="submit" class="btn btn-small btn-danger">Delete</button>
+			</div>  
+		
+		
 		  </fieldset>
 		</form>
       

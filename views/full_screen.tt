@@ -1,7 +1,9 @@
 <div class="container">
   <!-- Jumbotron -->
-  <div class="jumbotron">	
-  <a href="/<% back %>"><% svg %></a>  
+  <div class="jumbotron">
+	
+  <% IF id %><a href="/<% back %>/<% id %>"><% svg %></a> <% ELSE %><a href="/<% back %>"><% svg %></a><% END %>		
+   
   </div>
   <hr>
 

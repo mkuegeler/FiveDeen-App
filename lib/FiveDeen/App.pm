@@ -55,7 +55,7 @@ get '/form' => sub {
 
 post '/form' => sub {
 	
-	my $fivedeen_dbh = database('fivedeen');
+	#my $fivedeen_dbh = database('fivedeen');
 
         my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 
@@ -170,6 +170,16 @@ get '/library/:id' => sub {
 
 };
 
+post '/library/:id' => sub {
+
+    
+           template 'library',{delete => params->{delete},  id => params->{id} }, 
+
+};
+
+
+
+
 
 
 get '/include' => sub {
@@ -192,13 +202,14 @@ get '/single/:name' => sub {
 
 
 # zoom symbol viewer
-get '/zoom/:name/:radius/:back' => sub {
+get '/zoom/:name/:radius/:back/:id' => sub {
 	
 	my $data = read_json_file(config->{lib}{json});
 	
 	template 'full_screen', {
 		
-		       'back' => params->{back}, 
+		       'back' => params->{back},
+		        'id'  => params->{id},
               
                'svg' =>  template 'zoom.tt', {symbols => $data->{symbols}, name => params->{name},radius => params->{radius} },{ layout => undef },
                
