@@ -142,7 +142,26 @@ get '/libs' => sub {
 
 };
 
+post '/libs' => sub {
+   
+    my $table = "symbols";
 
+    my @select  = $fivedeen_dbh->quick_select($table,{} );
+ 	
+    my $data = read_json_file(config->{lib}{json});
+    	
+    # if there's no database record in table 'symbols', the default json file is used as the first sample record 
+    if (!@select) {
+	    
+         $fivedeen_dbh->quick_insert($table,{ name => "lib 1", description => "symbol library 1",  data => to_json($data) });
+         @select  = $fivedeen_dbh->quick_select($table,{} );
+    } 
+    
+    my $libs = from_json(select_to_json(@select));  
+    
+    template 'libs',{libs => $libs->{select} }, 
+
+};
 
 
 # the symbols library form (post/get)
@@ -171,9 +190,20 @@ get '/library/:id' => sub {
 };
 
 post '/library/:id' => sub {
+	
+	
+	   my $name = params->{name};
+	   
+	   my $radius = params->{radius};
+	   
+	   my $character = params->{character};
+	   
+	   my $style = params->{style};
+	   
+	   my $delete = params->{delete};
 
     
-           template 'library',{delete => params->{delete},  id => params->{id} }, 
+           template 'library',{delete => params->{style},  id => params->{id} }, 
 
 };
 
@@ -408,6 +438,21 @@ map {push ($select->{select}, { $keys[0] => $_->{id}, $keys[1] => $_->{name}, $k
 return to_json($select);
 
 }
+
+# ---------------------------------------------------------------------------
+# converts incoming post request into json (symbol library)
+sub convert_post_to_json {
+
+my @data = @_;   
+my @keys =  ( "function", "name", "radius", "style");
+
+my $symbol = { symbol => []};
+
+map {push ($symbol->{symbol}, { $keys[0] => $_->{function}, $keys[1] => $_->{name}, $keys[2] => $_->{radius} }) } @data;
+
+return to_json($symbol);	
+	
+} 
 
 # ---------------------------------------------------------------------------
 # example how to import a database schema

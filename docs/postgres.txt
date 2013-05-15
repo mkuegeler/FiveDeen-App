@@ -1,0 +1,17 @@
+# use database
+postgres fivedeen
+
+# show all databases
+\l
+
+# show tables 
+\d
+
+# show table structure
+\d table_name
+
+#quit console
+\q
+
+# help
+\h

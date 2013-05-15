@@ -26,8 +26,8 @@
 		  <fieldset>
 
 		    <legend>Symbols.json [Library ID: <% id %>]</legend>
-	        
-	        <input type="hidden" name="secret" value="test it"></input> 
+		    
+		    
 		
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
@@ -42,7 +42,15 @@
 				    </div>
 				    <div id="collapse<% n.name %>" class="accordion-body collapse">
 				      <div class="accordion-inner">
-
+				      
+				                <div class="control-group">
+						     <label class="control-label">Function:</label>
+						     <div class="controls">						 
+						     <input type="text" name="function" value="<% n.function %>">
+						     </div>
+						</div>
+				     
+				     
 						 <div class="control-group">
 						     <label class="control-label">Name:</label>
 						     <div class="controls">						 
