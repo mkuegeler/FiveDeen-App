@@ -191,19 +191,35 @@ get '/library/:id' => sub {
 
 post '/library/:id' => sub {
 	
+	   my $function = params->{function};
+	   
+	   # my $name = params->{name};
+	   
+	   # my $radius = params->{radius};
+	   
+	   # my $character = params->{character};
+	   
+	   # my $style = params->{style};
+	   
+	   # my $delete = params->{delete};
 	
-	   my $name = params->{name};
+	   # my $data = { content => [params->{name},params->{radius},params->{character},params->{style}] };
+	
+	   # my $data = convert_post_symbol_to_json([params->{name},params->{radius},params->{character},params->{style}]);
+	
 	   
-	   my $radius = params->{radius};
-	   
-	   my $character = params->{character};
-	   
-	   my $style = params->{style};
-	   
-	   my $delete = params->{delete};
 
-    
-           template 'library',{delete => params->{style},  id => params->{id} }, 
+       my %allparams = reverse params;
+
+       my $data = convert_post_symbol_to_json($function);
+
+       #my $data = to_json(\%allparams);
+
+       # $data = ${\%allparams}{name};
+
+       # my $data = ${\%allparams};
+
+       template 'library',{data => $data,  id => params->{id} }, 
 
 };
 
@@ -441,19 +457,46 @@ return to_json($select);
 
 # ---------------------------------------------------------------------------
 # converts incoming post request into json (symbol library)
-sub convert_post_to_json {
+sub convert_post_symbol_to_json {
 
-my @data = @_;   
+my @data = @_;
+#my %data = @_;
 my @keys =  ( "function", "name", "radius", "style");
+
+my $count = 0;
+# my $names = ${\%data}{name};  
 
 my $symbol = { symbol => []};
 
-map {push ($symbol->{symbol}, { $keys[0] => $_->{function}, $keys[1] => $_->{name}, $keys[2] => $_->{radius} }) } @data;
+# map {push ($symbol->{symbol}, { $keys[0] => $_ }) } ${\%data}{function};
+# map {push ($symbol->{symbol}, { $keys[1] => $_ }) } ${\%data}{name};
+# map {push ($symbol->{symbol}, { $keys[2] => $_ }) } ${\%data}{radius};
 
-return to_json($symbol);	
+# map {push ($symbol->{symbol}, { $_ => $data{$_} }); $count++;  } keys %data;
+map {push ($symbol->{symbol}, { $keys[0] => $_ })  } @data;
+
+# {name}[$count]
+# return to_json(\%data);
+return to_json($symbol);
+
+# return ${\%data}{name}[0];
 	
 } 
+# ---------------------------------------------------------------------------
+# support routine
+# converts incoming post request into json (symbol library: styles)
+sub convert_post_styles_to_json {
 
+my @data = @_;   
+my $key = "style";
+
+my $styles = { styles => []};
+
+map {push ($styles->{styles}, { $key => $_->{style} }) } @data;
+
+return $styles;	
+	
+}
 # ---------------------------------------------------------------------------
 # example how to import a database schema
 sub init_db {

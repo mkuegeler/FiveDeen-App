@@ -19,19 +19,26 @@
   <!-- Jumbotron -->
   
   	 <div class="jumbotron">
-	 <% FOR d IN delete %>
-	 <p><% d %></p>
-	 <% END %>
+	 
+	
+	 <textarea rows="8" name="data">
+
+	   <% data %>
+	  
+	 </textarea> 
+	
         <form class="form-inline" method="post">
 		  <fieldset>
 
 		    <legend>Symbols.json [Library ID: <% id %>]</legend>
 		    
+		    <script>count = 0; styles = 0;</script>
 		    
-		
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
 			
+			 
+			 
 			<div class="accordion" id="accordion1">
 				
 				<div class="accordion-group">
@@ -43,40 +50,47 @@
 				    <div id="collapse<% n.name %>" class="accordion-body collapse">
 				      <div class="accordion-inner">
 				      
+				
 				                <div class="control-group">
 						     <label class="control-label">Function:</label>
-						     <div class="controls">						 
-						     <input type="text" name="function" value="<% n.function %>">
+						     <div class="controls">	
+							 <!--  <script>document.write("<input type='text' name='function_"+count+"' value='<% n.function %>'>");</script> -->
+							 <input type="text" name="function" value="<% n.function %>"> 					 
+						     
 						     </div>
 						</div>
 				     
 				     
 						 <div class="control-group">
 						     <label class="control-label">Name:</label>
-						     <div class="controls">						 
-						     <input type="text" name="name" value="<% n.name %>">
+						     <div class="controls">
+							 <script>document.write("<input type='text' name='name_"+count+"' value='<% n.name %>'>");</script>						 
+						     <!-- <input type="text" name="name" value="<% n.name %>">	-->						     
 						     </div>
 						</div>
 
 						<div class="control-group"> 
 						     <label class="control-label">Radius:</label>
-						     <div class="controls">					 	
-						     <input type="text" name="radius" value="<% n.radius %>">
+						     <div class="controls">	
+							 <script>document.write("<input type='text' name='radius_"+count+"' value='<% n.radius %>'>");</script>				 	
+						     <!-- <input type="text" name="radius" value="<% n.radius %>"> -->	
 						     </div>
 						 </div>
 
 						 <div class="control-group">
 						     <label class="control-label">Character:</label>
-						     <div class="controls">						 
-						     <input type="text" name="character" value="<% n.character %>">
+						     <div class="controls">	
+							 <script>document.write("<input type='text' name='character_"+count+"' value='<% n.character %>'>");</script>					 
+						     <!-- <input type="text" name="character" value="<% n.character %>"> -->
 						     </div>
 					    </div>
-
+                          
 					       <% FOR t IN n.styles %>
 					   	 <div class="control-group">		
 							 <label class="control-label">Style:</label>
-							 <div class="controls">						 								       
-							 <input type="text" name="style" value="<% t.style %>">
+							 <div class="controls">	
+							 <script>document.write("<input type='text' name='style_"+count+"_"+styles+"' value='<% t.style %>'>");</script>						 								       
+							 <!-- <input type="text" name="style" value="<% t.style %>"> -->
 							 
 							 </div>
 							 
@@ -88,7 +102,8 @@
 							    
 							</span>
 							
-						 </div>			
+						 </div>	
+						  <script>styles++;</script>		
 					      <% END %>
 					     
 					     <span class="help-block">												
@@ -106,7 +121,7 @@
 			  </div>	 
 				
 			</div>
-			    
+			  <script>count++;</script>	  
 		  <% END %>
     	<% END %>
 
@@ -134,5 +149,5 @@
 
 <!-- debug stuff -->
 <script>
-console.log(<% log %>);
+console.log(<% data %>);
 </script>

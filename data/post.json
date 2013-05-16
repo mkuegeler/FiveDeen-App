@@ -1,0 +1,60 @@
+
+	   {
+   "function" : [
+      "simpleCircleSymbol",
+      "simpleCircleSymbol",
+      "simpleCircleSymbol",
+      "simpleSquareSymbol",
+      "combinedSquareCircleSymbol",
+      "singleLetterSymbol_A",
+      "singleLetterSymbol_B",
+      "singleLetterSymbol_C"
+   ],
+   "character" : [
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "A",
+      "B",
+      "C"
+   ],
+   "radius" : [
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50",
+      "50"
+   ],
+   "style" : [
+      "stroke:#138788;stroke-width:2px;fill:#00ffcc",
+      "stroke:#00ff00;stroke-width:2px;fill:#ffcc00",
+      "stroke:#00ffff;stroke-width:2px;fill:#ffffcc",
+      "stroke:#ff0000;stroke-width:1px;fill:none",
+      "stroke:#ff0000;stroke-width:1px;fill:none",
+      "stroke:#0000ff;stroke-width:1px;fill:none",
+      "#ff0000",
+      "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none",
+      "#ff00ff",
+      "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none",
+      "#ffff00",
+      "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+   ],
+   "name" : [
+      "symbol_1",
+      "symbol_2",
+      "symbol_3",
+      "symbol_4",
+      "symbol_5",
+      "symbol_A",
+      "symbol_B",
+      "symbol_C"
+   ],
+   "id" : "1"
+}
+
+	  
