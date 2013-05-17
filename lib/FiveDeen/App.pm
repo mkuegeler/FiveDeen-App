@@ -191,29 +191,32 @@ get '/library/:id' => sub {
 
 post '/library/:id' => sub {
 	
-	   my $function = params->{function};
+	   my $amount = params->{amount};
+	
+	   my @function = params->{function};
 	   
-	   # my $name = params->{name};
+	   my $name = params->{name};
 	   
-	   # my $radius = params->{radius};
+	   my $radius = params->{radius};
 	   
-	   # my $character = params->{character};
+	   my $character = params->{character};
 	   
-	   # my $style = params->{style};
+	   my $style = params->{style};
 	   
-	   # my $delete = params->{delete};
+	   my $delete = params->{delete};
 	
 	   # my $data = { content => [params->{name},params->{radius},params->{character},params->{style}] };
 	
-	   # my $data = convert_post_symbol_to_json([params->{name},params->{radius},params->{character},params->{style}]);
+	   # my $data = convert_post_symbol_to_json([params->{amount},params->{function},params->{name},params->{radius},params->{character},params->{style}]);
 	
-	   
 
-       my %allparams = reverse params;
+       my %allparams = params;
 
-       my $data = convert_post_symbol_to_json($function);
+       my $data = convert_post_symbol_to_json(%allparams);
 
-       #my $data = to_json(\%allparams);
+       # my $data = convert_post_symbol_to_json($function);
+
+       # my $data = to_json(\%allparams);
 
        # $data = ${\%allparams}{name};
 
@@ -459,32 +462,75 @@ return to_json($select);
 # converts incoming post request into json (symbol library)
 sub convert_post_symbol_to_json {
 
-my @data = @_;
-#my %data = @_;
+#my @data = @_;
+my %data = @_;
 my @keys =  ( "function", "name", "radius", "style");
 
 my $count = 0;
 # my $names = ${\%data}{name};  
 
-my $symbol = { symbol => []};
+my @amount = ${\%data}{amount};
+
+my @function = ${\%data}{function};
+   
+my @name = ${\%data}{name};
+   
+my @radius = ${\%data}{radius};
+   
+my @character = ${\%data}{character};
+   
+my @style = ${\%data}{style};
+   
+my @delete = ${\%data}{delete};
+
+
+
+
+my $symbols = { symbols => [] };
 
 # map {push ($symbol->{symbol}, { $keys[0] => $_ }) } ${\%data}{function};
 # map {push ($symbol->{symbol}, { $keys[1] => $_ }) } ${\%data}{name};
 # map {push ($symbol->{symbol}, { $keys[2] => $_ }) } ${\%data}{radius};
 
 # map {push ($symbol->{symbol}, { $_ => $data{$_} }); $count++;  } keys %data;
-map {push ($symbol->{symbol}, { $keys[0] => $_ })  } @data;
+
+# my %sample = (function => 'val1', name => 'val2', radius => 'val3',);
+
+
+map {push ($symbols->{symbols}, { function => $function[$count][0], name => $name[$count][0], radius => $radius[$count][0], character => $character[$count][0] }); $count++;  } @amount;
+
+# [params->{function},params->{name},params->{radius},params->{character},params->{style}]
+
+
+# map {push ($symbol->{symbol}, { $keys[0] => $_ })  } @data;
 
 # {name}[$count]
 # return to_json(\%data);
-return to_json($symbol);
+return to_json($symbols);
+
+# return $function[0][0];
 
 # return ${\%data}{name}[0];
 	
 } 
 # ---------------------------------------------------------------------------
 # support routine
-# converts incoming post request into json (symbol library: styles)
+# converts incoming post request item (sub array) into json (symbol library)
+sub convert_post_item_to_json {
+
+my %data = %_;   
+
+my @item;
+
+map {push (@item, { $_ => $data{$_} }) } keys %data;
+
+return @item;	
+	
+}
+
+# ---------------------------------------------------------------------------
+# support routine
+# converts incoming post request item (sub array) into json (sytyle)
 sub convert_post_styles_to_json {
 
 my @data = @_;   

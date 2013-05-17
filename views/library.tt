@@ -37,7 +37,7 @@
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
 			
-			 
+			<input type="hidden" name="amount" value="1">  
 			 
 			<div class="accordion" id="accordion1">
 				
@@ -64,24 +64,24 @@
 						 <div class="control-group">
 						     <label class="control-label">Name:</label>
 						     <div class="controls">
-							 <script>document.write("<input type='text' name='name_"+count+"' value='<% n.name %>'>");</script>						 
-						     <!-- <input type="text" name="name" value="<% n.name %>">	-->						     
+							 <!--  <script>document.write("<input type='text' name='name_"+count+"' value='<% n.name %>'>");</script> -->							 
+						     <input type="text" name="name" value="<% n.name %>">						     
 						     </div>
 						</div>
 
 						<div class="control-group"> 
 						     <label class="control-label">Radius:</label>
 						     <div class="controls">	
-							 <script>document.write("<input type='text' name='radius_"+count+"' value='<% n.radius %>'>");</script>				 	
-						     <!-- <input type="text" name="radius" value="<% n.radius %>"> -->	
+							 <!-- <script>document.write("<input type='text' name='radius_"+count+"' value='<% n.radius %>'>");</script> -->				 	
+						      <input type="text" name="radius" value="<% n.radius %>"> 	
 						     </div>
 						 </div>
 
 						 <div class="control-group">
 						     <label class="control-label">Character:</label>
 						     <div class="controls">	
-							 <script>document.write("<input type='text' name='character_"+count+"' value='<% n.character %>'>");</script>					 
-						     <!-- <input type="text" name="character" value="<% n.character %>"> -->
+							 <!-- <script>document.write("<input type='text' name='character_"+count+"' value='<% n.character %>'>");</script> -->					 
+						      <input type="text" name="character" value="<% n.character %>"> 
 						     </div>
 					    </div>
                           
@@ -89,8 +89,8 @@
 					   	 <div class="control-group">		
 							 <label class="control-label">Style:</label>
 							 <div class="controls">	
-							 <script>document.write("<input type='text' name='style_"+count+"_"+styles+"' value='<% t.style %>'>");</script>						 								       
-							 <!-- <input type="text" name="style" value="<% t.style %>"> -->
+							 <!-- <script>document.write("<input type='text' name='style_"+count+"_"+styles+"' value='<% t.style %>'>");</script> -->						 								       
+							  <input type="text" name="style" value="<% t.style %>"> 
 							 
 							 </div>
 							 
