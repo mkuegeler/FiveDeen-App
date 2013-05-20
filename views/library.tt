@@ -37,7 +37,7 @@
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
 			
-			<input type="hidden" name="amount" value="1">  
+			<!--  <input type="hidden" name="amount" value="1">  -->
 			 
 			<div class="accordion" id="accordion1">
 				
@@ -84,14 +84,14 @@
 						      <input type="text" name="character" value="<% n.character %>"> 
 						     </div>
 					    </div>
-                          
+                           <!-- <input type="hidden" name="styles" value="<% t %>"> -->	
 					       <% FOR t IN n.styles %>
 					   	 <div class="control-group">		
 							 <label class="control-label">Style:</label>
 							 <div class="controls">	
 							 <!-- <script>document.write("<input type='text' name='style_"+count+"_"+styles+"' value='<% t.style %>'>");</script> -->						 								       
-							  <input type="text" name="style" value="<% t.style %>"> 
-							 
+							  <input type="text" name="style" value="<% n.name %>;<% t.style %>"> 
+							  
 							 </div>
 							 
 							 <span class="help-block">
@@ -103,8 +103,8 @@
 							</span>
 							
 						 </div>	
-						  <script>styles++;</script>		
-					      <% END %>
+						 <!-- <script>styles++;</script> -->		
+					     <% END %>
 					     
 					     <span class="help-block">												
 							  <iframe src="/single/<% n.name %>" class="previewIframe" align="middle"></iframe>

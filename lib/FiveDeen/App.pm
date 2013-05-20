@@ -462,31 +462,31 @@ return to_json($select);
 # converts incoming post request into json (symbol library)
 sub convert_post_symbol_to_json {
 
-#my @data = @_;
-my %data = @_;
-my @keys =  ( "function", "name", "radius", "style");
+my @data = @_;
+# my %data = @_;
+# my @keys =  ( "function", "name", "radius", "style");
 
 my $count = 0;
 # my $names = ${\%data}{name};  
 
-my @amount = ${\%data}{amount};
+# my @amount = ${\%data}{amount};
 
-my @function = ${\%data}{function};
+# my @function = ${\%data}{function};
    
-my @name = ${\%data}{name};
+# my @name = ${\%data}{name};
    
-my @radius = ${\%data}{radius};
+# my @radius = ${\%data}{radius};
    
-my @character = ${\%data}{character};
+# my @character = ${\%data}{character};
    
-my @style = ${\%data}{style};
+# my @style = ${\%data}{style};
    
-my @delete = ${\%data}{delete};
-
-
+# my @delete = ${\%data}{delete};
 
 
-my $symbols = { symbols => [] };
+# my $length = @_;
+my $style_id;
+my $symbol = { symbol => [] };
 
 # map {push ($symbol->{symbol}, { $keys[0] => $_ }) } ${\%data}{function};
 # map {push ($symbol->{symbol}, { $keys[1] => $_ }) } ${\%data}{name};
@@ -497,7 +497,41 @@ my $symbols = { symbols => [] };
 # my %sample = (function => 'val1', name => 'val2', radius => 'val3',);
 
 
-map {push ($symbols->{symbols}, { function => $function[$count][0], name => $name[$count][0], radius => $radius[$count][0], character => $character[$count][0] }); $count++;  } @amount;
+# map {push ($symbol->{symbol}, { function => $function[0][$count], name => $name[0][$count], radius => $radius[0][$count], character => $character[0][$count] }); $count++;  } @_;
+# map {push ($symbol->{symbol}, { $_[6][$count] => $_[7][$count]  }); $count++; } @_;
+
+map {$style_id = styles_to_json($_[7][$count]); 
+	 push ($symbol->{symbol}, { $_[0] => $_[1][$count], # function
+	                            $_[2] => $_[3][$count], # character
+	                            $_[4] => $_[5][$count], # radius
+	                            # $_[6] => $_[7][$count], # style
+	                            styles=> $style_id, # styles
+	                            $_[8] => $_[9][$count]  # name
+	});  $count++;  } @_;
+
+
+# map {push ($symbol->{symbol}, { name => $_ }); $count++; } $data[9][0];
+
+
+# key => $_[0] # function
+# value => $_[1] # function value
+
+# key => $_[2] # character
+# value => $_[3] # character value
+
+# key => $_[4] # radius
+# value => $_[5] # radius value
+
+# key => $_[6] #  style
+# value => $_[7] #  style value
+
+# key => $_[8] # name
+# value => $_[9] # name value
+
+
+#map {push ($symbols->{symbols}, { key => $_[0], value => $_[1] }); $count++;  } @name;
+
+
 
 # [params->{function},params->{name},params->{radius},params->{character},params->{style}]
 
@@ -506,7 +540,7 @@ map {push ($symbols->{symbols}, { function => $function[$count][0], name => $nam
 
 # {name}[$count]
 # return to_json(\%data);
-return to_json($symbols);
+return to_json($symbol);
 
 # return $function[0][0];
 
@@ -530,17 +564,18 @@ return @item;
 
 # ---------------------------------------------------------------------------
 # support routine
-# converts incoming post request item (sub array) into json (sytyle)
-sub convert_post_styles_to_json {
+# converts incoming post request item (sub array) into json (style only)
+sub styles_to_json {
 
-my @data = @_;   
-my $key = "style";
 
-my $styles = { styles => []};
+my @data = split(/\;/,shift); 
 
-map {push ($styles->{styles}, { $key => $_->{style} }) } @data;
+my $styles = {styles => [ $data[0],$data[1] ] };
+
+# map {push ($styles->{styles}, { style => $_->{style} }) } @data;
 
 return $styles;	
+# return $length;	
 	
 }
 # ---------------------------------------------------------------------------
