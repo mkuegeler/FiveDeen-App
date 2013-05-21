@@ -485,8 +485,16 @@ my $count = 0;
 
 
 # my $length = @_;
-my $style_id;
-my $symbol = { symbol => [] };
+my $styles;
+my $symbols = { symbols => [] };
+my $radius;
+
+my $list = [];
+
+my @params;
+
+# $radius = $_[5][$count];
+
 
 # map {push ($symbol->{symbol}, { $keys[0] => $_ }) } ${\%data}{function};
 # map {push ($symbol->{symbol}, { $keys[1] => $_ }) } ${\%data}{name};
@@ -500,13 +508,45 @@ my $symbol = { symbol => [] };
 # map {push ($symbol->{symbol}, { function => $function[0][$count], name => $name[0][$count], radius => $radius[0][$count], character => $character[0][$count] }); $count++;  } @_;
 # map {push ($symbol->{symbol}, { $_[6][$count] => $_[7][$count]  }); $count++; } @_;
 
-map {$style_id = styles_to_json($_[7][$count]); 
-	 push ($symbol->{symbol}, { $_[0] => $_[1][$count], # function
-	                            $_[2] => $_[3][$count], # character
-	                            $_[4] => $_[5][$count], # radius
-	                            # $_[6] => $_[7][$count], # style
-	                            styles=> $style_id, # styles
-	                            $_[8] => $_[9][$count]  # name
+map { 
+	
+	 # $styles[0] = split_styles($_[7][$count])->{style};
+	 # $styles = set_style_array(    [ extract_style($_[7][$count])->{style}, extract_style($_[7][$count])->{style} ]   );
+	 # $styles = set_style_array(  [ $list,   $_[7][$count]   ]  );
+	 
+	 $params[0] = $list; $params[1] = $_[7][$count];
+	
+	 $styles = set_style_array(  @params  );
+	
+	 # if ($count>0) { 
+		
+		
+	 #	    $styles[1] = split_styles($_[7][$count-1]); $styles[2] = split_styles($_[7][$count]);
+		    
+	 #	        if ($styles[1]->{name} eq  $styles[2]->{name}) { $styles[0] = set_style_array([$styles[1]->{style},$styles[2]->{style}]);  } 
+		
+		
+	 # } 
+		
+ 	 $radius = int($_[5][0]); 
+	
+	 push ($symbols->{symbols}, { 
+		                            symbol => [    
+		                                         { 
+			                                       $_[0] => $_[1][$count], # function	
+			                                       $_[2] => $_[3][$count], # character 		                                       
+			                                       # $_[4] => $_[5][$count], # radius ( converted to integer)
+			                                       $_[4] => $radius, # radius ( converted to integer)
+	                                               
+	                                               # $_[6] => $_[7][$count], # style
+	                                               styles=> $styles, # styles array
+	                                               # styles=> $_[7][$count], # styles
+	
+	                                               $_[8] => $_[9][$count], # name 
+	                                               
+	                                             }
+	                                          ]
+	
 	});  $count++;  } @_;
 
 
@@ -540,7 +580,9 @@ map {$style_id = styles_to_json($_[7][$count]);
 
 # {name}[$count]
 # return to_json(\%data);
-return to_json($symbol);
+return to_json($symbols);
+
+# return $radius;
 
 # return $function[0][0];
 
@@ -564,18 +606,52 @@ return @item;
 
 # ---------------------------------------------------------------------------
 # support routine
+# split style string and returns name and style
+sub extract_style {
+
+
+# my @data = split(/\;/,shift); 
+my $data = shift; 
+# shift(@data);
+
+my $length = length($data);
+my $pos = index($data,";");
+
+my $name = substr($data,0,$pos);
+my $style = substr($data,($pos+1),$length);
+
+
+my $styles = { name => $name, style => $style};
+return $styles;	
+	
+}
+# ---------------------------------------------------------------------------
+# support routine
 # converts incoming post request item (sub array) into json (style only)
-sub styles_to_json {
+sub set_style_array {
+
+my ($styles, $data) = @_; 
+
+$data = extract_style($data); 
 
 
-my @data = split(/\;/,shift); 
+# my $styles = [{style => $data[0]},{style => $data[1]}];
 
-my $styles = {styles => [ $data[0],$data[1] ] };
+# my $styles = [ {style => $data->{style}}, {style => $data->{style}} ];
+# my $styles = [$data->{style},$data->{style}];
 
-# map {push ($styles->{styles}, { style => $_->{style} }) } @data;
+
+# my $styles = [];
+
+
+push($styles, {style => $data->{style} }  );
+
+
+
+# map {push ( $styles, { style => $_ }  ) } @data;
+# map {push ( $styles2, { style => $_ }  ) } $styles;
 
 return $styles;	
-# return $length;	
 	
 }
 # ---------------------------------------------------------------------------
