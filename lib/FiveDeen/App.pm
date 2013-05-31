@@ -514,11 +514,13 @@ map {
 	 # $styles = set_style_array(    [ extract_style($_[7][$count])->{style}, extract_style($_[7][$count])->{style} ]   );
 	 # $styles = set_style_array(  [ $list,   $_[7][$count]   ]  );
 	 
-	 $params[0] = $list; $params[1] = $_[7][$count];
+	 $params[0] = $list; $params[1] = $_[7][$count]; 
 	
-	 $styles = set_style_array(  @params  );
+	 
 	
-	 # if ($count>0) { 
+	  if ($count==0) { 
+		  
+		  $params[2] = $_[7][$count];
 		
 		
 	 #	    $styles[1] = split_styles($_[7][$count-1]); $styles[2] = split_styles($_[7][$count]);
@@ -526,7 +528,11 @@ map {
 	 #	        if ($styles[1]->{name} eq  $styles[2]->{name}) { $styles[0] = set_style_array([$styles[1]->{style},$styles[2]->{style}]);  } 
 		
 		
-	 # } 
+	  } else { $params[2] = $_[7][$count-1];  }
+	  
+	  $styles = set_style_array(  @params  );
+	  
+	  $list = [];
 		
  	 $radius = int($_[5][0]); 
 	
@@ -630,9 +636,12 @@ return $styles;
 # converts incoming post request item (sub array) into json (style only)
 sub set_style_array {
 
-my ($styles, $data) = @_; 
+my ($styles, $data0, $data1) = @_; 
 
-$data = extract_style($data); 
+$data0 = extract_style($data0); 
+$data1 = extract_style($data1); 
+
+# if ($data0->{name} eq $data1->{name}) {      }
 
 
 # my $styles = [{style => $data[0]},{style => $data[1]}];
@@ -644,7 +653,7 @@ $data = extract_style($data);
 # my $styles = [];
 
 
-push($styles, {style => $data->{style} }  );
+push($styles, {style => $data0->{style} }  );
 
 
 

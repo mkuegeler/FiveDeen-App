@@ -3,14 +3,582 @@
    "symbols" : [
       {
          "symbol" : [
-            null,
-            null,
-            null,
-            null,
-            null
+            {
+               "function" : "simpleCircleSymbol",
+               "radius" : 50,
+               "character" : "a",
+               "name" : "symbol_1",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "simpleCircleSymbol",
+               "radius" : 50,
+               "character" : "b",
+               "name" : "symbol_2",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "simpleCircleSymbol",
+               "radius" : 50,
+               "character" : "c",
+               "name" : "symbol_3",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "simpleSquareSymbol",
+               "radius" : 50,
+               "character" : "d",
+               "name" : "symbol_4",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "combinedSquareCircleSymbol",
+               "radius" : 50,
+               "character" : "e",
+               "name" : "symbol_5",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "singleLetterSymbol_A",
+               "radius" : 50,
+               "character" : "A",
+               "name" : "symbol_A",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "singleLetterSymbol_B",
+               "radius" : 50,
+               "character" : "B",
+               "name" : "symbol_B",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : "singleLetterSymbol_C",
+               "radius" : 50,
+               "character" : "C",
+               "name" : "symbol_C",
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : null,
+               "radius" : 50,
+               "character" : null,
+               "name" : null,
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : null,
+               "radius" : 50,
+               "character" : null,
+               "name" : null,
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : null,
+               "radius" : 50,
+               "character" : null,
+               "name" : null,
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
+         ]
+      },
+      {
+         "symbol" : [
+            {
+               "function" : null,
+               "radius" : 50,
+               "character" : null,
+               "name" : null,
+               "styles" : [
+                  {
+                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
+                  },
+                  {
+                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
+                  },
+                  {
+                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
+                  },
+                  {
+                     "style" : "#ff0000"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ff00ff"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  },
+                  {
+                     "style" : "#ffff00"
+                  },
+                  {
+                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
+                  }
+               ]
+            }
          ]
       }
    ]
 }
 
 	  
+	 
