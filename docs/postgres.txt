@@ -1,7 +1,14 @@
-# use database
-postgres fivedeen
+# switch to user postgres
+su postgres
+# pw: postgres
+
+# call psql
+
+# use specific database
+psql fivedeen
 
 # show all databases
+# alt + sharp s:\ 
 \l
 
 # show tables 

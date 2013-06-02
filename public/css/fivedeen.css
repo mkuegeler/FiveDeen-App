@@ -74,6 +74,10 @@
     width: 80%;background-color:#000099;color:#ffffff;
   }
 
+  .input_styles {
+    width: 60%;
+  }
+
   .footer  {
         text-align: center;
   }

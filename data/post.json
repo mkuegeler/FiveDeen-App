@@ -1,5 +1,5 @@
-
-	   {
+  
+     {
    "symbols" : [
       {
          "symbol" : [
@@ -11,39 +11,6 @@
                "styles" : [
                   {
                      "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
                   }
                ]
             }
@@ -58,40 +25,7 @@
                "name" : "symbol_2",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
                      "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
                   }
                ]
             }
@@ -106,40 +40,7 @@
                "name" : "symbol_3",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
                      "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
                   }
                ]
             }
@@ -154,40 +55,7 @@
                "name" : "symbol_4",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
                      "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
                   }
                ]
             }
@@ -202,40 +70,10 @@
                "name" : "symbol_5",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
                      "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
                   },
                   {
                      "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
                   }
                ]
             }
@@ -250,37 +88,7 @@
                "name" : "symbol_A",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
                      "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
                   },
                   {
                      "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
@@ -298,37 +106,7 @@
                "name" : "symbol_B",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
                      "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
                   },
                   {
                      "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
@@ -346,228 +124,6 @@
                "name" : "symbol_C",
                "styles" : [
                   {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "symbol" : [
-            {
-               "function" : null,
-               "radius" : 50,
-               "character" : null,
-               "name" : null,
-               "styles" : [
-                  {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "symbol" : [
-            {
-               "function" : null,
-               "radius" : 50,
-               "character" : null,
-               "name" : null,
-               "styles" : [
-                  {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "symbol" : [
-            {
-               "function" : null,
-               "radius" : 50,
-               "character" : null,
-               "name" : null,
-               "styles" : [
-                  {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ffff00"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  }
-               ]
-            }
-         ]
-      },
-      {
-         "symbol" : [
-            {
-               "function" : null,
-               "radius" : 50,
-               "character" : null,
-               "name" : null,
-               "styles" : [
-                  {
-                     "style" : "stroke:#138788;stroke-width:2px;fill:#00ffcc"
-                  },
-                  {
-                     "style" : "stroke:#00ff00;stroke-width:2px;fill:#ffcc00"
-                  },
-                  {
-                     "style" : "stroke:#00ffff;stroke-width:2px;fill:#ffffcc"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#ff0000;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;fill:none"
-                  },
-                  {
-                     "style" : "#ff0000"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
-                     "style" : "#ff00ff"
-                  },
-                  {
-                     "style" : "stroke:#0000ff;stroke-width:1px;stroke-dasharray:2,2;fill:none"
-                  },
-                  {
                      "style" : "#ffff00"
                   },
                   {
@@ -580,5 +136,4 @@
    ]
 }
 
-	  
-	 
+   

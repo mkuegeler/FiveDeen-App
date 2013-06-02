@@ -22,9 +22,9 @@
 	 
 	
 	 <textarea rows="8" name="data">
-
-	   <% data %>
-	  
+  
+     <% data %>
+   
 	 </textarea> 
 	
         <form class="form-inline" method="post">
@@ -90,7 +90,8 @@
 							 <label class="control-label">Style:</label>
 							 <div class="controls">	
 							 <!-- <script>document.write("<input type='text' name='style_"+count+"_"+styles+"' value='<% t.style %>'>");</script> -->						 								       
-							  <input type="text" name="style" value="<% n.name %>;<% t.style %>"> 
+							  <input type="text" class="input_styles" name="style" value="<% n.name %>;<% t.style %>"> 
+							  <!--  <input type="hidden" name="style_of" value="<% n.name %>;<% t.style %>"> -->
 							  
 							 </div>
 							 

@@ -6,7 +6,17 @@ CREATE TABLE symbols (id SERIAL PRIMARY KEY UNIQUE, name varchar(255), descripti
 CREATE TABLE sequence (id SERIAL PRIMARY KEY, userid INTEGER, data JSON);
 
 -- reset auto increment (example)
-alter sequence symbols_id_seq restart with 1;
+ALTER sequence symbols_id_seq restart with 1;
 
 -- alter table owner
-alter table symbols owner to fivedeen;
+ALTER table symbols owner to fivedeen;
+
+-- delete single record
+DELETE FROM symbols WHERE id = 1;
+
+-- delete all records
+DELETE FROM symbols;
+
+-- afte deleting all rowas of a table, reset auto increment (example)
+ALTER sequence symbols_id_seq restart with 1;
+
