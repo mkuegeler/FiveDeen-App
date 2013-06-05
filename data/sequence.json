@@ -1,18 +1,6 @@
 {
    "sequence" : [
       {
-         "character" : "A",
-         "name" : "symbol_A"
-      },
-      {
-         "character" : "A",
-         "name" : "symbol_A"
-      },
-      {
-         "character" : " ",
-         "name" : ""
-      },
-      {
          "character" : "B",
          "name" : "symbol_B"
       },
@@ -21,10 +9,6 @@
          "name" : "symbol_B"
       },
       {
-         "character" : " ",
-         "name" : ""
-      },
-      {
          "character" : "C",
          "name" : "symbol_C"
       },
@@ -39,30 +23,6 @@
       {
          "character" : "C",
          "name" : "symbol_C"
-      },
-      {
-         "character" : "C",
-         "name" : "symbol_C"
-      },
-      {
-         "character" : "C",
-         "name" : "symbol_C"
-      },
-      {
-         "character" : " ",
-         "name" : ""
-      },
-      {
-         "character" : "B",
-         "name" : "symbol_B"
-      },
-      {
-         "character" : "B",
-         "name" : "symbol_B"
-      },
-      {
-         "character" : "B",
-         "name" : "symbol_B"
       },
       {
          "character" : " ",
@@ -73,24 +33,84 @@
          "name" : "symbol_A"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : "B",
-         "name" : "symbol_B"
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : "B",
-         "name" : "symbol_B"
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : "B",
-         "name" : "symbol_B"
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
+      },
+      {
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
          "character" : "A",

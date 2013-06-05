@@ -1,24 +1,12 @@
 {
    "string" : [
       {
-         "character" : "A"
-      },
-      {
-         "character" : "A"
-      },
-      {
-         "character" : " "
-      },
-      {
          "character" : "B"
       },
       {
          "character" : "B"
       },
       {
-         "character" : " "
-      },
-      {
          "character" : "C"
       },
       {
@@ -29,24 +17,6 @@
       },
       {
          "character" : "C"
-      },
-      {
-         "character" : "C"
-      },
-      {
-         "character" : "C"
-      },
-      {
-         "character" : " "
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
-      },
-      {
-         "character" : "B"
       },
       {
          "character" : " "
@@ -55,19 +25,64 @@
          "character" : "A"
       },
       {
-         "character" : " "
+         "character" : "A"
       },
       {
-         "character" : "B"
+         "character" : "A"
       },
       {
-         "character" : "B"
+         "character" : "A"
       },
       {
-         "character" : "B"
+         "character" : "A"
       },
       {
-         "character" : " "
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
+      },
+      {
+         "character" : "A"
       },
       {
          "character" : "A"

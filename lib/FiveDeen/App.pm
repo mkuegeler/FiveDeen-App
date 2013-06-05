@@ -46,7 +46,14 @@ get '/form' => sub {
 	# test only
 	# my $data = read_json_file(config->{lib}{json});
 	
-	template 'form', {
+	my $table = "symbols";
+
+    my @select  = $fivedeen_dbh->quick_select($table,{} );
+	
+	my $libs = from_json(select_to_json(@select));
+	
+	
+	template 'form', { libs => $libs->{select}
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef },  
                #'title' => config->{appname},
                #'symbols' => $data->{symbols},              
@@ -56,6 +63,14 @@ get '/form' => sub {
 post '/form' => sub {
 	
 	#my $fivedeen_dbh = database('fivedeen');
+	
+	
+	my $table = "symbols";
+
+    my @select  = $fivedeen_dbh->quick_select($table,{} );
+	
+	my $libs = from_json(select_to_json(@select));
+	
 
         my $incoming_string = write_json_file(config->{string}{json},string_to_json(params->{data}));
 
@@ -87,11 +102,12 @@ post '/form' => sub {
 	template 'form', {
 		       'data' => params->{data},
 		
+		        libs => $libs->{select},
 		       # 'log' => $html_path, 
 		       #'title' => config->{appname},
 		 
                #'header' =>  template 'header.tt', {title => config->{appname},}, { layout => undef }, 
-               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps} },{ layout => undef },              
+               'svg' =>  template 'embedded_svg.tt', { maps => $maps->{maps}, id => params->{id} },{ layout => undef },              
        };
 	
 	
@@ -205,7 +221,7 @@ post '/library/:id' => sub {
 
     my $row  = $fivedeen_dbh->quick_select($table,{id => params->{id}} );
 
-    my $data = from_json($row->{data});
+    $data = from_json($row->{data});
 
     # template 'library',{data => $data,  id => params->{id} }, 
 
@@ -218,9 +234,22 @@ post '/library/:id' => sub {
 
 
 
-get '/include' => sub {
+get '/include/:id' => sub {
 	content_type 'text/ecmascript' ;
-	my $data = read_json_file(config->{lib}{json});
+	
+	# file-based solution
+	# my $data = read_json_file(config->{lib}{json});
+	
+	my $table = "symbols";
+	
+	#my $id;
+	
+	#if (params->{id}) {$id = params->{id};} else {$id = 1;}
+	
+	my $row  = $fivedeen_dbh->quick_select($table,{id => params->{id}} );
+
+    my $data = from_json($row->{data});
+	
 	
 	template 'include',{symbols => $data->{symbols}}, { layout => undef },   
 };
@@ -231,16 +260,27 @@ get '/symbols' => sub {
 };
 
 # single symbol viewer
-get '/single/:name' => sub {
+get '/single/:name/:id' => sub {
  
-	template 'single.tt', { name => params->{name} },{ layout => undef };
+	template 'single.tt', { name => params->{name}, id => params->{id} },{ layout => undef };
 };
 
 
 # zoom symbol viewer
 get '/zoom/:name/:radius/:back/:id' => sub {
 	
-	my $data = read_json_file(config->{lib}{json});
+	# file-based solution
+	# my $data = read_json_file(config->{lib}{json});
+	
+	my $table = "symbols";
+	
+	#my $id;
+	
+	#if (params->{id}) {$id = params->{id};} else {$id = 1;}
+	
+	my $row  = $fivedeen_dbh->quick_select($table,{id => params->{id}} );
+
+    my $data = from_json($row->{data});
 	
 	template 'full_screen', {
 		

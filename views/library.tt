@@ -108,7 +108,7 @@
 					     <% END %>
 					     
 					     <span class="help-block">												
-							  <iframe src="/single/<% n.name %>" class="previewIframe" align="middle"></iframe>
+							  <iframe src="/single/<% n.name %>/<% id %>" class="previewIframe" align="middle"></iframe>
 						    <br/><p><a href="/zoom/<% n.name %>/<% zoom %>/library/<% id %>" alt="Zoom">Preview (Zoom)</a></p>   
 						</span>   
 					

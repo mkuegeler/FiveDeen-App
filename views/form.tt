@@ -25,6 +25,30 @@
 		    <h4>Type your text:</h4>
 		    <textarea rows="8" name="data"><% IF data %><% data %><% ELSE %>A sample text<% END %></textarea>
 		    <span class="help-block">Note: Currently, not more than 256 characters are allowed.</span>
+		
+		    <div>
+			<span class="help-block">Select a symbol library:</span>
+		    <table class="lib_table">
+			 	<thead>
+				    <tr>
+					  <th class="lib_th">Select</th>
+				      <th class="lib_th">ID</th>
+				      <th class="lib_th">Name</th>
+				      <th class="lib_th">Description</th>
+				    </tr>
+				  </thead>
+				  <tbody>
+	 
+			     <% FOR l IN libs %>
+		     
+				        <tr><td class="lib_td"><input type="checkbox" name="id" value="<% l.id %>"></td><td class="lib_td"><a href="/library/<% l.id %>"><% l.id %></a></td><td class="lib_td"><% l.name %></td><td class="lib_td"><% l.description %></td></tr>
+			    
+		         <% END %>
+		        </tbody>
+		     </table>
+		     </div> 
+		
+		
 
 		    <button type="submit" class="btn btn-primary">Submit</button>
 		  </fieldset>
