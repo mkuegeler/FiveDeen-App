@@ -36,7 +36,7 @@
 		    <% FOR s IN symbols %>
 			     <% FOR n IN s.symbol %>
 			
-			<!--  <input type="hidden" name="amount" value="1">  -->
+			 <% IF n.name == name %>	 
 			 
 			<div class="accordion" id="accordion1">
 				
@@ -103,7 +103,7 @@
 							</span>
 							
 						 </div>	
-						 <!-- <script>styles++;</script> -->		
+						 		
 					     <% END %>
 					     
 					     <span class="help-block">												
@@ -115,33 +115,20 @@
 						      <input type="checkbox" name="delete" value="1">Delete
 						    </label> -->
 					
-					    <div><a href="/delete/<% n.name %>/<% zoom %>/library/<% id %>" class="btn btn-small btn-danger">Delete</a></div> 
-					
-					
-					
     			      </div>
 				    	
 				   </div>
 			  </div>	 
 				
 			</div>
-			  <script>count++;</script>	  
+			  <% END %>  
 		  <% END %>
     	<% END %>
 
-
-        
 		
-		    <!-- <div>
-			  <button type="submit" class="btn btn-small btn-primary" name="new" value="new">New</button>
-			  <button type="submit" class="btn btn-small btn-warning" name="edit" value="edit">Edit</button>
-			  <button type="submit" class="btn btn-small btn-danger" name="delete" value="delete">Delete</button>
-			</div> --> 
-			
-			<div>
-			  <button type="submit" class="btn btn-small btn-primary">Submit</button>
-			  <a href="#" class="btn btn-small btn-success">New</a>
-			 </div> 
+		<!-- 	<div>
+			  <button type="submit" class="btn btn-small btn-danger">Delete</button>
+			 </div> -->
 		
 		
 		  </fieldset>

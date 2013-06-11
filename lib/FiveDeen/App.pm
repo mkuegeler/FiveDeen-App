@@ -214,7 +214,22 @@ post '/library/:id' => sub {
 	
     my %allparams = params;
 
+    # my $data;
+
     my $data = convert_post_symbol_to_json(%allparams);
+    
+     
+
+    # my $submit;
+
+    #if    (params->{New}) { $submit = "New"; }
+    
+    #       elsif (params->{Edit}) { $submit = "Edit"; }
+
+    #            elsif (params->{Delete}) { $submit = "Delete"; }
+
+    #                   else { $submit = "undefined";   }
+
 
        
     $fivedeen_dbh->quick_update($table, { id => params->{id} }, { data => $data });
@@ -292,6 +307,34 @@ get '/zoom/:name/:radius/:back/:id' => sub {
        };
 	
 };
+
+# delete single symbol
+get '/delete/:name/:radius/:back/:id' => sub {
+	
+	# file-based solution
+	# my $data = read_json_file(config->{lib}{json});
+	
+	my $table = "symbols";
+	
+	my $row  = $fivedeen_dbh->quick_select($table,{id => params->{id}} );
+
+    my $data = from_json($row->{data});
+	
+	template 'delete', {
+		
+		       'back' => params->{back},
+		        'id'  => params->{id},
+              
+               symbols => $data->{symbols}, 
+               name => params->{name},
+               radius => params->{radius} ,
+               
+       };
+	
+};
+
+
+
 
 # simple CRUD example
 
