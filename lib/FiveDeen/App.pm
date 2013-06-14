@@ -360,6 +360,7 @@ get '/symbollibs' => sub {
     redirect '/symbollibs';
 };
 
+
 #---------------------------------------------------------------------------
 # SUPPORT Routines
 #---------------------------------------------------------------------------
@@ -651,6 +652,79 @@ return $styles;
 	
 }
 
+# ---------------------------------------------------------------------------
+# support routine
+# create a single symbol as json string
+sub create_symbol {
+
+
+my @data = @_;
+
+# remove first element of array
+shift(@data);
+
+my $function  = $data[0];
+
+my $name      = $data[1];
+
+my $character = $data[2];
+
+my $radius    = $data[3];
+
+my $styles    = $data[4];
+
+
+my $symbol = {  symbol => [    
+	                          {  
+			                      
+			                      styles=> $styles, # styles array  
+			                    
+			                      radius => $radius, # radius 
+			
+			                      function => $function, # function    
+			 
+			                      character => $character, # character 
+			                     
+			                      name => $name, # name 	
+		                       
+	                          }
+                          ]
+};  
+
+return to_json($symbol);
+	
+}
+
+# ---------------------------------------------------------------------------
+# support routine
+# create a symbol library
+sub create_library {
+	
+my @data = @_;
+# my (@symbol,$symbols) = @_;
+# remove first element of array
+shift(@data);
+	
+# my $symbols = { symbols => [] };
+
+
+my @symbol  = $data[0];
+my $library = $data[1];
+
+# my @symbol;
+
+# my $symbols = {  symbols => [ from_json(@data) ] };
+
+# my $symbols = {  symbols => [ from_json(@symbol) ] }; 
+ 
+# map { @symbol = $_;  push($symbols->{symbols}, { from_json(@symbol)  }  );  } @data;
+
+push($library->{symbols}, from_json(@symbol)  ); 
+
+return to_json($library);
+
+
+}
 
 # ---------------------------------------------------------------------------
 # example how to import a database schema

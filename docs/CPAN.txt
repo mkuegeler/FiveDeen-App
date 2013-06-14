@@ -4,5 +4,7 @@ HTML::Template
 Text::Template     
 CGI::FastTemplate   
 CGI::SSI            
-CGI::Session         
+CGI::Session  
 
+# 14.06.2013: Additional CPAN Modules
+Test::Subroutines       

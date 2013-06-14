@@ -13,5 +13,5 @@ use Dancer::Test;
 #        "got expected response content for GET /";
 
 
-response_content_is [GET => '/setPoints'];
+response_content_is [GET => '/'];
 
