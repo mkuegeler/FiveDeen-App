@@ -694,11 +694,21 @@ my $symbol = {  symbol => [
 return to_json($symbol);
 	
 }
+# ---------------------------------------------------------------------------
+# support routine
+# create an empty symbol library
+sub create_library {
+
+my $library = { symbols => [] }; 
+
+return $library; 	
+
+}	
 
 # ---------------------------------------------------------------------------
 # support routine
-# create a symbol library
-sub create_library {
+# add a symbol to a symbol library
+sub add_symbol_to_library {
 	
 my @data = @_;
 # my (@symbol,$symbols) = @_;
@@ -726,6 +736,22 @@ return to_json($library);
 
 }
 
+# ---------------------------------------------------------------------------
+# support routine
+# remove a symbol from a symbol library
+sub remove_symbol_from_library {
+
+my @data = @_;
+# remove first element of array
+shift(@data);
+
+my @symbol  = $data[0];
+my $library = $data[1];
+
+
+return to_json($library);	
+	
+}
 # ---------------------------------------------------------------------------
 # example how to import a database schema
 sub init_db {
