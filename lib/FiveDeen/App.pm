@@ -707,6 +707,20 @@ return $library;
 
 # ---------------------------------------------------------------------------
 # support routine
+# show content of a symbol library
+sub show_library {
+
+my @data = @_;
+shift(@data);
+my $library = $data[0];
+
+
+return to_json($library);	
+
+}
+
+# ---------------------------------------------------------------------------
+# support routine
 # add a symbol to a symbol library
 sub add_symbol_to_library {
 	
@@ -745,13 +759,89 @@ my @data = @_;
 # remove first element of array
 shift(@data);
 
-my @symbol  = $data[0];
+my $name    = $data[0];
+my $old_library = $data[1];
+
+my $new_library = { symbols => [] }; 
+
+my $boolean;
+
+
+map {     
+    map { if ($_->{name} eq $name) {    $boolean = 1;  } else { $boolean = 0; } } @{$_->{symbol}}; 
+         
+              if ($boolean == 0) {   push($new_library->{symbols}, $_ );    }
+
+    }  @{$old_library->{symbols}};
+
+
+
+return to_json($new_library);
+
+	
+}
+
+# ---------------------------------------------------------------------------
+# support routine
+# get a single symbol (json) from a symbol library
+sub get_symbol_from_library {
+
+my @data = @_;
+# remove first element of array
+shift(@data);
+
+my $name    = $data[0];
+my $library = $data[1];
+
+my $symbol = { symbol => [] }; 
+
+
+my $boolean;
+
+
+map {     
+    map { if ($_->{name} eq $name) {    $boolean = 1;  } else { $boolean = 0; } } @{$_->{symbol}}; 
+         
+              if ($boolean == 1) {   $symbol = $_;   }
+
+    }  @{$library->{symbols}};
+
+
+return to_json($symbol);
+
+	
+}
+
+
+
+# ---------------------------------------------------------------------------
+# support routine
+# find a symbol in a symbol library, returns 1 if found else 0
+sub find_symbol_in_library {
+
+my @data = @_;
+# remove first element of array
+shift(@data);
+
+
+my $name    = $data[0];
 my $library = $data[1];
 
 
-return to_json($library);	
+# my $message = "\n\nNo symbol found\n\n";
+# $message = "\n\nSymbol $name found!\n\n";
+
+my $boolean = 0;
+
+map {     
+    map { if ($_->{name} eq $name) { $boolean = 1; } } @{$_->{symbol}};
+    }  @{$library->{symbols}};
+
+return $boolean;
 	
 }
+
+
 # ---------------------------------------------------------------------------
 # example how to import a database schema
 sub init_db {
