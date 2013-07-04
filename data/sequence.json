@@ -5,52 +5,156 @@
          "name" : "symbol_A"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : "s",
-         "name" : ""
+         "character" : "A",
+         "name" : "symbol_A"
       },
       {
-         "character" : "a",
-         "name" : "symbol_1"
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "m",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "p",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "l",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "e",
-         "name" : "symbol_5"
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "t",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "e",
-         "name" : "symbol_5"
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "x",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
       },
       {
-         "character" : "t",
-         "name" : ""
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "B",
+         "name" : "symbol_B"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
+      },
+      {
+         "character" : "C",
+         "name" : "symbol_C"
       }
    ]
 }

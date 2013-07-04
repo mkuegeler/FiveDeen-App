@@ -172,10 +172,23 @@ post '/libs' => sub {
          $fivedeen_dbh->quick_insert($table,{ name => "lib 1", description => "symbol library 1",  data => to_json($data) });
          @select  = $fivedeen_dbh->quick_select($table,{} );
     } 
+
     
-    my $libs = from_json(select_to_json(@select));  
+    # create an empty library
     
-    template 'libs',{libs => $libs->{select} }, 
+    if (params->{submit} eq "New") {
+	
+        $fivedeen_dbh->quick_insert($table,{ name => "lib 0", description => "symbol library 0",  data => to_json(create_library()) });
+
+
+    }
+
+
+    my $libs = from_json(select_to_json(@select)); 
+
+    # my $amount_of_symbols = count_symbols_in_library($libs); 
+
+    template 'libs',{libs => $libs->{select}, event => params->{selected}  }, 
 
 };
 
@@ -838,6 +851,27 @@ map {
     }  @{$library->{symbols}};
 
 return $boolean;
+	
+}
+
+# ---------------------------------------------------------------------------
+# support routine
+# count symbols of a symbol library, returns the amount of symbols
+sub count_symbols_in_library {
+
+#my @data = @_;
+# remove first element of array
+#shift(@data);
+
+
+# my $name    = $data[0];
+my $library = $_[0];
+
+my $amount = 0;
+
+map { $amount++; }  @{$library->{symbols}};   
+
+return $amount;
 	
 }
 
