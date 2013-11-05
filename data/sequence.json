@@ -1,12 +1,12 @@
 {
    "sequence" : [
       {
-         "character" : "A",
-         "name" : "symbol_A"
+         "name" : "symbol_A",
+         "character" : "A"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "name" : "",
+         "character" : " "
       },
       {
          "character" : "s",
@@ -17,28 +17,28 @@
          "name" : "symbol_1"
       },
       {
-         "character" : "m",
-         "name" : ""
+         "name" : "",
+         "character" : "m"
       },
       {
          "character" : "p",
          "name" : ""
       },
       {
-         "character" : "l",
-         "name" : ""
+         "name" : "",
+         "character" : "l"
       },
       {
-         "character" : "e",
-         "name" : "symbol_5"
+         "name" : "symbol_5",
+         "character" : "e"
       },
       {
-         "character" : " ",
-         "name" : ""
+         "name" : "",
+         "character" : " "
       },
       {
-         "character" : "t",
-         "name" : ""
+         "name" : "",
+         "character" : "t"
       },
       {
          "character" : "e",
@@ -49,8 +49,8 @@
          "name" : ""
       },
       {
-         "character" : "t",
-         "name" : ""
+         "name" : "",
+         "character" : "t"
       }
    ]
 }
