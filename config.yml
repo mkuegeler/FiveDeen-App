@@ -50,11 +50,11 @@ symbols: /javascripts/symbols.js
 
 # default sequence file without layout
 sequence:
-    json: /home/perldev/workspace/FiveDeen-App/data/sequence.json
+    json: /home/michael/workspace/FiveDeen-App/data/sequence.json
 
 # user string location
 string:
-    json: /home/perldev/workspace/FiveDeen-App/data/string.json
+    json: /home/michael/workspace/FiveDeen-App/data/string.json
 
 # the symbol sequence and the default layout as defined by set_linear_points
 maps:
@@ -65,8 +65,8 @@ maps:
     
 # symbol library
 lib:
-    json: /home/perldev/workspace/FiveDeen-App/data/symbols.json 
+    json: /home/michael/workspace/FiveDeen-App/data/symbols.json 
     
 # the default font map (opsolete. see symbols.json)
 font:
-    json: /home/perldev/workspace/FiveDeen-App/data/font.json       
+    json: /home/michael/workspace/FiveDeen-App/data/font.json       
