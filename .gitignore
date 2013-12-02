@@ -44,3 +44,4 @@ Thumbs.db
 # Dancer and perl specific files #
 ##################################
 .SKIP
+config.yml
