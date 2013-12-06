@@ -50,11 +50,11 @@ symbols: /javascripts/symbols.js
 
 # default sequence file without layout
 sequence:
-    json: /home/michael/workspace/FiveDeen-App/data/sequence.json
+    json: /var/www/vhosts/s16933713.onlinehome-server.info/5deen/FiveDeen-App/data/sequence.json
 
 # user string location
 string:
-    json: /home/michael/workspace/FiveDeen-App/data/string.json
+    json: /var/www/vhosts/s16933713.onlinehome-server.info/5deen/FiveDeen-App/data/string.json
 
 # the symbol sequence and the default layout as defined by set_linear_points
 maps:
@@ -65,8 +65,8 @@ maps:
     
 # symbol library
 lib:
-    json: /home/michael/workspace/FiveDeen-App/data/symbols.json 
+    json: /var/www/vhosts/s16933713.onlinehome-server.info/5deen/FiveDeen-App/data/symbols.json 
     
 # the default font map (opsolete. see symbols.json)
 font:
-    json: /home/michael/workspace/FiveDeen-App/data/font.json       
+    json: /var/www/vhosts/s16933713.onlinehome-server.info/5deen/FiveDeen-App/data/font.json       
